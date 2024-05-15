@@ -1,0 +1,78 @@
+[
+  {
+    "name": "여로",
+    "areaKey": 1
+  },
+  {
+    "name": "리버스 시티",
+    "areaKey": 2
+  },
+  {
+    "name": "츄츄",
+    "areaKey": 3
+  },
+  {
+    "name": "얌얌",
+    "areaKey": 4
+  },
+  {
+    "name": "레헬른",
+    "areaKey": 5
+  },
+  {
+    "name": "아르카나",
+    "areaKey": 6
+  },
+  {
+    "name": "모라스",
+    "areaKey": 7
+  },
+  {
+    "name": "에스페라",
+    "areaKey": 8
+  },
+  {
+    "name": "셀라스",
+    "areaKey": 9
+  },
+  {
+    "name": "문브릿지",
+    "areaKey": 10
+  },
+  {
+    "name": "고통의 미궁",
+    "areaKey": 11
+  },
+  {
+    "name": "리멘",
+    "areaKey": 12
+  },
+  {
+    "name": "세르니움(전)",
+    "areaKey": 13
+  },
+  {
+    "name": "세르니움(후)",
+    "areaKey": 14
+  },
+  {
+    "name": "호텔 아르크스",
+    "areaKey": 15
+  },
+  {
+    "name": "오디움",
+    "areaKey": 16
+  },
+  {
+    "name": "도원경",
+    "areaKey": 17
+  },
+  {
+    "name": "아르테리아",
+    "areaKey": 18
+  },
+  {
+    "name": "카르시온",
+    "areaKey": 19
+  }
+]

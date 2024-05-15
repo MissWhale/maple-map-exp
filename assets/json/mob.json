@@ -1,0 +1,1304 @@
+[
+  {
+    "name": "기쁨의 에르다스",
+    "mobKey": 1,
+    "level": 200,
+    "exp": 98708,
+    "areaKey": 1
+  },
+  {
+    "name": "분노의 에르다스",
+    "mobKey": 2,
+    "level": 201,
+    "exp": 101389,
+    "areaKey": 1
+  },
+  {
+    "name": "슬픔의 에르다스",
+    "mobKey": 3,
+    "level": 202,
+    "exp": 104101,
+    "areaKey": 1
+  },
+  {
+    "name": "즐거움의 에르다스",
+    "mobKey": 4,
+    "level": 203,
+    "exp": 107125,
+    "areaKey": 1
+  },
+  {
+    "name": "암석의 에르다스",
+    "mobKey": 5,
+    "level": 204,
+    "exp": 109886,
+    "areaKey": 1
+  },
+  {
+    "name": "화염의 에르다스",
+    "mobKey": 6,
+    "level": 205,
+    "exp": 112662,
+    "areaKey": 1
+  },
+  {
+    "name": "강인한 영혼의 에르다스",
+    "mobKey": 7,
+    "level": 206,
+    "exp": 115470,
+    "areaKey": 1
+  },
+  {
+    "name": "안식의 에르다스",
+    "mobKey": 8,
+    "level": 207,
+    "exp": 118598,
+    "areaKey": 1
+  },
+  {
+    "name": "에르다스의 등불",
+    "mobKey": 9,
+    "level": 208,
+    "exp": 121453,
+    "areaKey": 1
+  },
+  {
+    "name": "아르마의 부하",
+    "mobKey": 10,
+    "level": 209,
+    "exp": 124322,
+    "areaKey": 1
+  },
+  {
+    "name": "즐거움의 에르다스",
+    "mobKey": 11,
+    "level": 209,
+    "exp": 207204,
+    "areaKey": 1
+  },
+  {
+    "name": "강인한 영혼의 에르다스",
+    "mobKey": 12,
+    "level": 209,
+    "exp": 207204,
+    "areaKey": 1
+  },
+  {
+    "name": "아르마의 부하",
+    "mobKey": 13,
+    "level": 209,
+    "exp": 207204,
+    "areaKey": 1
+  },
+  {
+    "name": "트라",
+    "mobKey": 14,
+    "level": 205,
+    "exp": 112662,
+    "areaKey": 2
+  },
+  {
+    "name": "몬토",
+    "mobKey": 15,
+    "level": 205,
+    "exp": 112662,
+    "areaKey": 2
+  },
+  {
+    "name": "수색형 T드론 A형",
+    "mobKey": 16,
+    "level": 206,
+    "exp": 115470,
+    "areaKey": 2
+  },
+  {
+    "name": "수색형 T드론 B형",
+    "mobKey": 17,
+    "level": 206,
+    "exp": 115470,
+    "areaKey": 2
+  },
+  {
+    "name": "전투형 T드론 A형",
+    "mobKey": 18,
+    "level": 207,
+    "exp": 118598,
+    "areaKey": 2
+  },
+  {
+    "name": "전투형 T드론 B형",
+    "mobKey": 19,
+    "level": 208,
+    "exp": 121453,
+    "areaKey": 2
+  },
+  {
+    "name": "섬멸형 T드론 A형",
+    "mobKey": 20,
+    "level": 209,
+    "exp": 124322,
+    "areaKey": 2
+  },
+  {
+    "name": "섬멸형 T드론 B형",
+    "mobKey": 21,
+    "level": 209,
+    "exp": 124322,
+    "areaKey": 2
+  },
+  {
+    "name": "강력한 수색형 T드론 A형",
+    "mobKey": 22,
+    "level": 210,
+    "exp": 248003,
+    "areaKey": 2
+  },
+  {
+    "name": "강력한 수색형 T드론 B형",
+    "mobKey": 23,
+    "level": 210,
+    "exp": 248003,
+    "areaKey": 2
+  },
+  {
+    "name": "강력한 전투형 T드론 A형",
+    "mobKey": 24,
+    "level": 211,
+    "exp": 253673,
+    "areaKey": 2
+  },
+  {
+    "name": "강력한 전투형 T드론 B형",
+    "mobKey": 25,
+    "level": 212,
+    "exp": 260047,
+    "areaKey": 2
+  },
+  {
+    "name": "강력한 섬멸형 T드론 A형",
+    "mobKey": 26,
+    "level": 213,
+    "exp": 265808,
+    "areaKey": 2
+  },
+  {
+    "name": "강력한 섬멸형 T드론 B형",
+    "mobKey": 27,
+    "level": 213,
+    "exp": 265808,
+    "areaKey": 2
+  },
+  {
+    "name": "파인디어",
+    "mobKey": 28,
+    "level": 210,
+    "exp": 248003,
+    "areaKey": 3
+  },
+  {
+    "name": "큰뿔 파인디어",
+    "mobKey": 29,
+    "level": 211,
+    "exp": 253673,
+    "areaKey": 3
+  },
+  {
+    "name": "유나나",
+    "mobKey": 30,
+    "level": 210,
+    "exp": 248003,
+    "areaKey": 3
+  },
+  {
+    "name": "램나나",
+    "mobKey": 31,
+    "level": 211,
+    "exp": 253673,
+    "areaKey": 3
+  },
+  {
+    "name": "플리온",
+    "mobKey": 32,
+    "level": 212,
+    "exp": 260047,
+    "areaKey": 3
+  },
+  {
+    "name": "성난 플리온",
+    "mobKey": 33,
+    "level": 213,
+    "exp": 265808,
+    "areaKey": 3
+  },
+  {
+    "name": "설익은 울프룻",
+    "mobKey": 34,
+    "level": 212,
+    "exp": 260047,
+    "areaKey": 3
+  },
+  {
+    "name": "잘익은 울프룻",
+    "mobKey": 35,
+    "level": 213,
+    "exp": 265808,
+    "areaKey": 3
+  },
+  {
+    "name": "그린 캣피쉬",
+    "mobKey": 36,
+    "level": 214,
+    "exp": 271621,
+    "areaKey": 3
+  },
+  {
+    "name": "블루 캣피쉬",
+    "mobKey": 37,
+    "level": 216,
+    "exp": 284043,
+    "areaKey": 3
+  },
+  {
+    "name": "라이터틀",
+    "mobKey": 38,
+    "level": 215,
+    "exp": 278138,
+    "areaKey": 3
+  },
+  {
+    "name": "대장 라이터틀",
+    "mobKey": 39,
+    "level": 216,
+    "exp": 284043,
+    "areaKey": 3
+  },
+  {
+    "name": "크릴라",
+    "mobKey": 40,
+    "level": 217,
+    "exp": 290679,
+    "areaKey": 3
+  },
+  {
+    "name": "족장 크릴라",
+    "mobKey": 41,
+    "level": 219,
+    "exp": 303394,
+    "areaKey": 3
+  },
+  {
+    "name": "버샤크",
+    "mobKey": 42,
+    "level": 218,
+    "exp": 296653,
+    "areaKey": 3
+  },
+  {
+    "name": "족장 버샤크",
+    "mobKey": 43,
+    "level": 219,
+    "exp": 303394,
+    "areaKey": 3
+  },
+  {
+    "name": "몽키록",
+    "mobKey": 44,
+    "level": 215,
+    "exp": 278138,
+    "areaKey": 4
+  },
+  {
+    "name": "버쉬룸",
+    "mobKey": 45,
+    "level": 216,
+    "exp": 284043,
+    "areaKey": 4
+  },
+  {
+    "name": "라이톤",
+    "mobKey": 46,
+    "level": 217,
+    "exp": 290679,
+    "areaKey": 4
+  },
+  {
+    "name": "스톤피",
+    "mobKey": 47,
+    "level": 218,
+    "exp": 296653,
+    "areaKey": 4
+  },
+  {
+    "name": "쿰파이더",
+    "mobKey": 48,
+    "level": 219,
+    "exp": 303394,
+    "areaKey": 4
+  },
+  {
+    "name": "다람뇽",
+    "mobKey": 49,
+    "level": 219,
+    "exp": 303394,
+    "areaKey": 4
+  },
+  {
+    "name": "강력한 몽키록",
+    "mobKey": 50,
+    "level": 220,
+    "exp": 309470,
+    "areaKey": 4
+  },
+  {
+    "name": "강력한 버쉬룸",
+    "mobKey": 51,
+    "level": 220,
+    "exp": 309470,
+    "areaKey": 4
+  },
+  {
+    "name": "강력한 라이톤",
+    "mobKey": 52,
+    "level": 220,
+    "exp": 309470,
+    "areaKey": 4
+  },
+  {
+    "name": "강력한 스톤피",
+    "mobKey": 53,
+    "level": 220,
+    "exp": 309470,
+    "areaKey": 4
+  },
+  {
+    "name": "강력한 쿰파이더",
+    "mobKey": 54,
+    "level": 220,
+    "exp": 309470,
+    "areaKey": 4
+  },
+  {
+    "name": "강력한 다람뇽",
+    "mobKey": 55,
+    "level": 220,
+    "exp": 309470,
+    "areaKey": 4
+  },
+  {
+    "name": "종이봉투 뒷골목주민",
+    "mobKey": 56,
+    "level": 220,
+    "exp": 309470,
+    "areaKey": 5
+  },
+  {
+    "name": "나무판자 뒷골목주민",
+    "mobKey": 57,
+    "level": 221,
+    "exp": 316316,
+    "areaKey": 5
+  },
+  {
+    "name": "갈리나",
+    "mobKey": 58,
+    "level": 221,
+    "exp": 316316,
+    "areaKey": 5
+  },
+  {
+    "name": "갈루스",
+    "mobKey": 59,
+    "level": 222,
+    "exp": 322473,
+    "areaKey": 5
+  },
+  {
+    "name": "성난 우승접시",
+    "mobKey": 60,
+    "level": 222,
+    "exp": 322473,
+    "areaKey": 5
+  },
+  {
+    "name": "비뚤어진 우승접시",
+    "mobKey": 61,
+    "level": 223,
+    "exp": 329417,
+    "areaKey": 5
+  },
+  {
+    "name": "성난 무도회주민",
+    "mobKey": 62,
+    "level": 223,
+    "exp": 329417,
+    "areaKey": 5
+  },
+  {
+    "name": "광기의 무도회주민",
+    "mobKey": 63,
+    "level": 224,
+    "exp": 335675,
+    "areaKey": 5
+  },
+  {
+    "name": "약화된 클리너",
+    "mobKey": 64,
+    "level": 224,
+    "exp": 335675,
+    "areaKey": 5
+  },
+  {
+    "name": "춤추는 빨간구두",
+    "mobKey": 65,
+    "level": 225,
+    "exp": 342720,
+    "areaKey": 5
+  },
+  {
+    "name": "클리너",
+    "mobKey": 66,
+    "level": 226,
+    "exp": 349836,
+    "areaKey": 5
+  },
+  {
+    "name": "푸른 눈의 가고일",
+    "mobKey": 67,
+    "level": 227,
+    "exp": 356216,
+    "areaKey": 5
+  },
+  {
+    "name": "붉은 눈의 가고일",
+    "mobKey": 68,
+    "level": 228,
+    "exp": 363430,
+    "areaKey": 5
+  },
+  {
+    "name": "물의 정령",
+    "mobKey": 69,
+    "level": 230,
+    "exp": 393361,
+    "areaKey": 6
+  },
+  {
+    "name": "햇살의 정령",
+    "mobKey": 70,
+    "level": 231,
+    "exp": 401055,
+    "areaKey": 6
+  },
+  {
+    "name": "흙의 정령",
+    "mobKey": 71,
+    "level": 232,
+    "exp": 408778,
+    "areaKey": 6
+  },
+  {
+    "name": "서리구름의 정령",
+    "mobKey": 72,
+    "level": 233,
+    "exp": 415702,
+    "areaKey": 6
+  },
+  {
+    "name": "번개구름의 정령",
+    "mobKey": 73,
+    "level": 234,
+    "exp": 423542,
+    "areaKey": 6
+  },
+  {
+    "name": "맹독의 정령",
+    "mobKey": 74,
+    "level": 235,
+    "exp": 431459,
+    "areaKey": 6
+  },
+  {
+    "name": "폭발의 정령",
+    "mobKey": 75,
+    "level": 236,
+    "exp": 439402,
+    "areaKey": 6
+  },
+  {
+    "name": "혼돈의 정령",
+    "mobKey": 76,
+    "level": 237,
+    "exp": 446505,
+    "areaKey": 6
+  },
+  {
+    "name": "절망의 정령",
+    "mobKey": 77,
+    "level": 238,
+    "exp": 454564,
+    "areaKey": 6
+  },
+  {
+    "name": "비탄의 정령",
+    "mobKey": 78,
+    "level": 239,
+    "exp": 462670,
+    "areaKey": 6
+  },
+  {
+    "name": "부조화의 정령",
+    "mobKey": 79,
+    "level": 240,
+    "exp": 470824,
+    "areaKey": 6
+  },
+  {
+    "name": "기억속의 제네로이드A형",
+    "mobKey": 80,
+    "level": 236,
+    "exp": 439402,
+    "areaKey": 7
+  },
+  {
+    "name": "기억속의 제네로이드B형",
+    "mobKey": 81,
+    "level": 236,
+    "exp": 439402,
+    "areaKey": 7
+  },
+  {
+    "name": "이름 모를 고양이",
+    "mobKey": 82,
+    "level": 237,
+    "exp": 446505,
+    "areaKey": 7
+  },
+  {
+    "name": "힘센 형님",
+    "mobKey": 83,
+    "level": 238,
+    "exp": 454564,
+    "areaKey": 7
+  },
+  {
+    "name": "강한 형님",
+    "mobKey": 84,
+    "level": 238,
+    "exp": 454564,
+    "areaKey": 7
+  },
+  {
+    "name": "푸른 그림자",
+    "mobKey": 85,
+    "level": 239,
+    "exp": 462670,
+    "areaKey": 7
+  },
+  {
+    "name": "붉은 그림자",
+    "mobKey": 86,
+    "level": 240,
+    "exp": 470824,
+    "areaKey": 7
+  },
+  {
+    "name": "실험의 부산물A",
+    "mobKey": 87,
+    "level": 241,
+    "exp": 485614,
+    "areaKey": 7
+  },
+  {
+    "name": "실험의 부산물B",
+    "mobKey": 88,
+    "level": 241,
+    "exp": 485614,
+    "areaKey": 7
+  },
+  {
+    "name": "의식에 휘말린 근위병",
+    "mobKey": 89,
+    "level": 242,
+    "exp": 494006,
+    "areaKey": 7
+  },
+  {
+    "name": "의식에 휘말린 망치병",
+    "mobKey": 90,
+    "level": 243,
+    "exp": 501461,
+    "areaKey": 7
+  },
+  {
+    "name": "의식에 휘말린 마법사",
+    "mobKey": 91,
+    "level": 244,
+    "exp": 509964,
+    "areaKey": 7
+  },
+  {
+    "name": "의식에 휘말린 궁병",
+    "mobKey": 92,
+    "level": 245,
+    "exp": 518511,
+    "areaKey": 7
+  },
+  {
+    "name": "아투인",
+    "mobKey": 93,
+    "level": 240,
+    "exp": 470824,
+    "areaKey": 8
+  },
+  {
+    "name": "아투스",
+    "mobKey": 94,
+    "level": 241,
+    "exp": 485614,
+    "areaKey": 8
+  },
+  {
+    "name": "벨라리온",
+    "mobKey": 95,
+    "level": 242,
+    "exp": 494006,
+    "areaKey": 8
+  },
+  {
+    "name": "벨라리스",
+    "mobKey": 96,
+    "level": 243,
+    "exp": 501461,
+    "areaKey": 8
+  },
+  {
+    "name": "아라냐",
+    "mobKey": 97,
+    "level": 244,
+    "exp": 509964,
+    "areaKey": 8
+  },
+  {
+    "name": "아라네아",
+    "mobKey": 98,
+    "level": 245,
+    "exp": 518511,
+    "areaKey": 8
+  },
+  {
+    "name": "빛의 주시자",
+    "mobKey": 99,
+    "level": 246,
+    "exp": 527106,
+    "areaKey": 8
+  },
+  {
+    "name": "어둠의 주시자",
+    "mobKey": 100,
+    "level": 247,
+    "exp": 535749,
+    "areaKey": 8
+  },
+  {
+    "name": "빛의 집행자",
+    "mobKey": 101,
+    "level": 248,
+    "exp": 544459,
+    "areaKey": 8
+  },
+  {
+    "name": "어둠의 집행자",
+    "mobKey": 102,
+    "level": 249,
+    "exp": 553217,
+    "areaKey": 8
+  },
+  {
+    "name": "베리타테",
+    "mobKey": 103,
+    "level": 245,
+    "exp": 518511,
+    "areaKey": 9
+  },
+  {
+    "name": "뽈라르",
+    "mobKey": 104,
+    "level": 246,
+    "exp": 527106,
+    "areaKey": 9
+  },
+  {
+    "name": "바다렐이",
+    "mobKey": 105,
+    "level": 247,
+    "exp": 535749,
+    "areaKey": 9
+  },
+  {
+    "name": "히아데스",
+    "mobKey": 106,
+    "level": 248,
+    "exp": 544459,
+    "areaKey": 9
+  },
+  {
+    "name": "데네볼라",
+    "mobKey": 107,
+    "level": 249,
+    "exp": 553217,
+    "areaKey": 9
+  },
+  {
+    "name": "릴리 보레아",
+    "mobKey": 108,
+    "level": 250,
+    "exp": 584807,
+    "areaKey": 9
+  },
+  {
+    "name": "안젤루스",
+    "mobKey": 109,
+    "level": 251,
+    "exp": 594040,
+    "areaKey": 9
+  },
+  {
+    "name": "혼돈의 피조물",
+    "mobKey": 110,
+    "level": 250,
+    "exp": 584807,
+    "areaKey": 10
+  },
+  {
+    "name": "파괴의 피조물",
+    "mobKey": 111,
+    "level": 251,
+    "exp": 594040,
+    "areaKey": 10
+  },
+  {
+    "name": "엄습하는 공포",
+    "mobKey": 112,
+    "level": 252,
+    "exp": 603318,
+    "areaKey": 10
+  },
+  {
+    "name": "주시하는 공포",
+    "mobKey": 113,
+    "level": 253,
+    "exp": 612643,
+    "areaKey": 10
+  },
+  {
+    "name": "공허의 하수인",
+    "mobKey": 114,
+    "level": 254,
+    "exp": 622041,
+    "areaKey": 10
+  },
+  {
+    "name": "황혼의 하수인",
+    "mobKey": 115,
+    "level": 254,
+    "exp": 622041,
+    "areaKey": 10
+  },
+  {
+    "name": "뒤엉킨 파편",
+    "mobKey": 116,
+    "level": 255,
+    "exp": 631458,
+    "areaKey": 11
+  },
+  {
+    "name": "복종하는 파편",
+    "mobKey": 117,
+    "level": 255,
+    "exp": 631458,
+    "areaKey": 11
+  },
+  {
+    "name": "어둠의 실패작",
+    "mobKey": 118,
+    "level": 256,
+    "exp": 640971,
+    "areaKey": 11
+  },
+  {
+    "name": "어둠의 피조물",
+    "mobKey": 119,
+    "level": 256,
+    "exp": 640971,
+    "areaKey": 11
+  },
+  {
+    "name": "절망의 날개",
+    "mobKey": 120,
+    "level": 257,
+    "exp": 650504,
+    "areaKey": 11
+  },
+  {
+    "name": "절망의 칼날",
+    "mobKey": 121,
+    "level": 257,
+    "exp": 650504,
+    "areaKey": 11
+  },
+  {
+    "name": "침묵의 기사",
+    "mobKey": 122,
+    "level": 258,
+    "exp": 661261,
+    "areaKey": 11
+  },
+  {
+    "name": "침묵의 정찰자",
+    "mobKey": 123,
+    "level": 258,
+    "exp": 661261,
+    "areaKey": 11
+  },
+  {
+    "name": "침묵의 방랑자",
+    "mobKey": 124,
+    "level": 258,
+    "exp": 661261,
+    "areaKey": 11
+  },
+  {
+    "name": "침묵의 감시자",
+    "mobKey": 125,
+    "level": 259,
+    "exp": 670940,
+    "areaKey": 11
+  },
+  {
+    "name": "침묵의 암살자",
+    "mobKey": 126,
+    "level": 259,
+    "exp": 670940,
+    "areaKey": 11
+  },
+  {
+    "name": "절망에 빠진 자",
+    "mobKey": 127,
+    "level": 259,
+    "exp": 670940,
+    "areaKey": 11
+  },
+  {
+    "name": "절망에 매인 자",
+    "mobKey": 128,
+    "level": 259,
+    "exp": 670940,
+    "areaKey": 11
+  },
+  {
+    "name": "안세스티온",
+    "mobKey": 129,
+    "level": 260,
+    "exp": 680638,
+    "areaKey": 12
+  },
+  {
+    "name": "트랜센디온",
+    "mobKey": 130,
+    "level": 261,
+    "exp": 690432,
+    "areaKey": 12
+  },
+  {
+    "name": "어센시온",
+    "mobKey": 131,
+    "level": 262,
+    "exp": 700242,
+    "areaKey": 12
+  },
+  {
+    "name": "포어베리온",
+    "mobKey": 132,
+    "level": 263,
+    "exp": 710121,
+    "areaKey": 12
+  },
+  {
+    "name": "엠브리온",
+    "mobKey": 133,
+    "level": 264,
+    "exp": 721247,
+    "areaKey": 12
+  },
+  {
+    "name": "강력한 어센시온",
+    "mobKey": 134,
+    "level": 262,
+    "exp": 840290,
+    "areaKey": 12
+  },
+  {
+    "name": "강력한 포어베리온",
+    "mobKey": 135,
+    "level": 263,
+    "exp": 852145,
+    "areaKey": 12
+  },
+  {
+    "name": "강력한 엠브리온",
+    "mobKey": 136,
+    "level": 264,
+    "exp": 865496,
+    "areaKey": 12
+  },
+  {
+    "name": "흑태양 보병",
+    "mobKey": 137,
+    "level": 260,
+    "exp": 1725461,
+    "areaKey": 13
+  },
+  {
+    "name": "흑태양 궁병",
+    "mobKey": 138,
+    "level": 260,
+    "exp": 1725461,
+    "areaKey": 13
+  },
+  {
+    "name": "괴물 갈매기",
+    "mobKey": 139,
+    "level": 260,
+    "exp": 1725461,
+    "areaKey": 13
+  },
+  {
+    "name": "화염 정령",
+    "mobKey": 140,
+    "level": 261,
+    "exp": 1750290,
+    "areaKey": 13
+  },
+  {
+    "name": "떠도는 학자 유령",
+    "mobKey": 141,
+    "level": 261,
+    "exp": 1750290,
+    "areaKey": 13
+  },
+  {
+    "name": "호기심 많은 학자 유령",
+    "mobKey": 142,
+    "level": 261,
+    "exp": 1750290,
+    "areaKey": 13
+  },
+  {
+    "name": "레프 보병",
+    "mobKey": 143,
+    "level": 262,
+    "exp": 1775159,
+    "areaKey": 14
+  },
+  {
+    "name": "레프 법사",
+    "mobKey": 144,
+    "level": 262,
+    "exp": 1775159,
+    "areaKey": 14
+  },
+  {
+    "name": "레프 암살자",
+    "mobKey": 145,
+    "level": 263,
+    "exp": 1800203,
+    "areaKey": 14
+  },
+  {
+    "name": "레프 기갑병",
+    "mobKey": 146,
+    "level": 263,
+    "exp": 1800203,
+    "areaKey": 14
+  },
+  {
+    "name": "흑태양 폭탄병",
+    "mobKey": 147,
+    "level": 264,
+    "exp": 1828409,
+    "areaKey": 14
+  },
+  {
+    "name": "흑태양 법사",
+    "mobKey": 148,
+    "level": 264,
+    "exp": 1828409,
+    "areaKey": 14
+  },
+  {
+    "name": "모래칼날 약탈꾼",
+    "mobKey": 149,
+    "level": 265,
+    "exp": 2056974,
+    "areaKey": 15
+  },
+  {
+    "name": "무쇠탄환 학살꾼",
+    "mobKey": 150,
+    "level": 265,
+    "exp": 2056974,
+    "areaKey": 15
+  },
+  {
+    "name": "탐색하는 폭실리언",
+    "mobKey": 151,
+    "level": 266,
+    "exp": 2085219,
+    "areaKey": 15
+  },
+  {
+    "name": "고물수집가 폭실리언",
+    "mobKey": 152,
+    "level": 267,
+    "exp": 2113572,
+    "areaKey": 15
+  },
+  {
+    "name": "엄격한 역무원",
+    "mobKey": 153,
+    "level": 268,
+    "exp": 2145596,
+    "areaKey": 15
+  },
+  {
+    "name": "주인잃은 왓치독",
+    "mobKey": 154,
+    "level": 269,
+    "exp": 2174274,
+    "areaKey": 15
+  },
+  {
+    "name": "강화형 파수꾼 산호",
+    "mobKey": 155,
+    "level": 270,
+    "exp": 2445217,
+    "areaKey": 16
+  },
+  {
+    "name": "강화형 파수꾼 감람",
+    "mobKey": 156,
+    "level": 270,
+    "exp": 2445217,
+    "areaKey": 16
+  },
+  {
+    "name": "강화형 파수꾼 금강",
+    "mobKey": 157,
+    "level": 270,
+    "exp": 2445217,
+    "areaKey": 16
+  },
+  {
+    "name": "앵글러 로봇 A형",
+    "mobKey": 158,
+    "level": 271,
+    "exp": 2481337,
+    "areaKey": 16
+  },
+  {
+    "name": "앵글러 로봇 B형",
+    "mobKey": 159,
+    "level": 271,
+    "exp": 2481337,
+    "areaKey": 16
+  },
+  {
+    "name": "앵글러 로봇 C형",
+    "mobKey": 160,
+    "level": 271,
+    "exp": 2481337,
+    "areaKey": 16
+  },
+  {
+    "name": "경비병 강옥",
+    "mobKey": 161,
+    "level": 272,
+    "exp": 2513634,
+    "areaKey": 16
+  },
+  {
+    "name": "경비병 마노",
+    "mobKey": 162,
+    "level": 272,
+    "exp": 2513634,
+    "areaKey": 16
+  },
+  {
+    "name": "무너지는 실험체",
+    "mobKey": 163,
+    "level": 273,
+    "exp": 2546149,
+    "areaKey": 16
+  },
+  {
+    "name": "실패한 피험체",
+    "mobKey": 164,
+    "level": 274,
+    "exp": 2582906,
+    "areaKey": 16
+  },
+  {
+    "name": "시든 봄의 연구자",
+    "mobKey": 165,
+    "level": 275,
+    "exp": 2903024,
+    "areaKey": 17
+  },
+  {
+    "name": "먹그늘 나비",
+    "mobKey": 166,
+    "level": 275,
+    "exp": 2903024,
+    "areaKey": 17
+  },
+  {
+    "name": "빛 없는 여름의 연구자",
+    "mobKey": 167,
+    "level": 276,
+    "exp": 2939616,
+    "areaKey": 17
+  },
+  {
+    "name": "묵그림자 두루미",
+    "mobKey": 168,
+    "level": 276,
+    "exp": 2939616,
+    "areaKey": 17
+  },
+  {
+    "name": "색 잃은 가을의 연구자",
+    "mobKey": 169,
+    "level": 277,
+    "exp": 2981010,
+    "areaKey": 17
+  },
+  {
+    "name": "먹자국 담비",
+    "mobKey": 170,
+    "level": 277,
+    "exp": 2981010,
+    "areaKey": 17
+  },
+  {
+    "name": "참혹한 겨울의 연구자",
+    "mobKey": 171,
+    "level": 278,
+    "exp": 3017988,
+    "areaKey": 17
+  },
+  {
+    "name": "묵날개 올빼미",
+    "mobKey": 172,
+    "level": 279,
+    "exp": 3059716,
+    "areaKey": 17
+  },
+  {
+    "name": "하이레프 보병",
+    "mobKey": 173,
+    "level": 280,
+    "exp": 3436027,
+    "areaKey": 18
+  },
+  {
+    "name": "하이레프 법사",
+    "mobKey": 174,
+    "level": 281,
+    "exp": 3482914,
+    "areaKey": 18
+  },
+  {
+    "name": "하이레프 기갑병",
+    "mobKey": 175,
+    "level": 282,
+    "exp": 3524768,
+    "areaKey": 18
+  },
+  {
+    "name": "하이레프 장검병",
+    "mobKey": 176,
+    "level": 283,
+    "exp": 3572010,
+    "areaKey": 18
+  },
+  {
+    "name": "얼어붙은 레프 보병",
+    "mobKey": 177,
+    "level": 284,
+    "exp": 3614278,
+    "areaKey": 18
+  },
+  {
+    "name": "얼어붙은 레프 법사",
+    "mobKey": 178,
+    "level": 284,
+    "exp": 3614278,
+    "areaKey": 18
+  },
+  {
+    "name": "절망의 파수꾼",
+    "mobKey": 179,
+    "level": 285,
+    "exp": 4062965,
+    "areaKey": 19
+  },
+  {
+    "name": "어둠이 파고든 괴조",
+    "mobKey": 180,
+    "level": 286,
+    "exp": 4110304,
+    "areaKey": 19
+  },
+  {
+    "name": "심연의 파수꾼",
+    "mobKey": 181,
+    "level": 286,
+    "exp": 4110304,
+    "areaKey": 19
+  },
+  {
+    "name": "절망의 사냥꾼",
+    "mobKey": 182,
+    "level": 287,
+    "exp": 4163751,
+    "areaKey": 19
+  },
+  {
+    "name": "어둠이 스며든 흑표",
+    "mobKey": 183,
+    "level": 288,
+    "exp": 4217526,
+    "areaKey": 19
+  },
+  {
+    "name": "심연의 사냥꾼",
+    "mobKey": 184,
+    "level": 288,
+    "exp": 4217526,
+    "areaKey": 19
+  },
+  {
+    "name": "근원에 다다른 기사",
+    "mobKey": 185,
+    "level": 289,
+    "exp": 4265489,
+    "areaKey": 19
+  },
+  {
+    "name": "근원에 다가간 사제",
+    "mobKey": 186,
+    "level": 289,
+    "exp": 4265489,
+    "areaKey": 19
+  }
+]
