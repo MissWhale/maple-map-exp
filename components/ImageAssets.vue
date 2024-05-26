@@ -1,5 +1,5 @@
 <script setup lang="ts">
-type Type = 'area' | 'force' | 'Elixir';
+type Type = 'area' | 'force' | 'elixir';
 const props = defineProps({
   type: {
     type: String as PropType<Type>,

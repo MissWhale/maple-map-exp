@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { useMapSettingStore } from '~/store';
-import type { SelectMap } from '~/type/select-map';
+import type { MapInfo } from '~/type/map';
 
 defineProps({
   map: {
-    type: Object as PropType<SelectMap>,
+    type: Object as PropType<MapInfo>,
     required: true,
   },
 });
@@ -22,7 +22,7 @@ const isMonsterView = computed(() => headers.value.includes('몬스터'));
 </script>
 
 <template>
-  <tr class="select-map">
+  <tr class="map-list">
     <td v-if="isAreaView" class="area">
       <div>
         <AreaImage :areaKey="map.area.areaKey" />
@@ -51,8 +51,8 @@ const isMonsterView = computed(() => headers.value.includes('몬스터'));
 </template>
 
 <style scoped lang="scss">
-@import './SelectMap.scss';
-tr.select-map {
+@import './Map.scss';
+tr.map-list {
   width: 100%;
   td.area,
   td.force {

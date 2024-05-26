@@ -6,3 +6,7 @@ export function makeComma(
     return value.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
   else return String(value).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 }
+export function range(start: number, end: number): number[] {
+  const arr = Array.from({ length: end - start }, (_, i) => start + i);
+  return arr;
+}

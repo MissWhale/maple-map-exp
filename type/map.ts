@@ -1,4 +1,4 @@
-export interface SelectMap {
+export interface MapInfo {
   area: {
     name: string;
     areaKey: number;
