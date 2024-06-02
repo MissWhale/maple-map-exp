@@ -35,6 +35,7 @@ const selectOne = ref();
         <ElixirContainer /> -->
       <MonsterParkContainer />
       <QuestDailyContainer />
+      <QuestWeeklyContainer />
       <!-- <MapTable @click="handleClick" /> -->
       <!-- <DopingContainer /> -->
     </main>

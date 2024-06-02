@@ -31,10 +31,24 @@ export const useDailyQuestStore = defineStore('dailyQuest', () => {
     () =>
       +((totalDailyQuestExp.value / getMaxExp(level.level)) * 100).toFixed(3),
   );
+  const dailyQuestReset = () => {
+    const isDefault = dailyQuest.value.every(
+      (quest) => quest.isCheck === false,
+    );
+    if (isDefault) return;
+    dailyQuest.value.forEach((quest) => {
+      quest.isCheck = false;
+    });
+  };
+  watch(
+    () => level.level,
+    () => dailyQuestReset(),
+  );
   return {
     dailyQuest,
     dailyQuestCheck,
     totalDailyQuestExp,
     totalDailyQuestExpPer,
+    dailyQuestReset,
   };
 });

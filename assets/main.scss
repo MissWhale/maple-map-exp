@@ -184,12 +184,12 @@ section.section {
     td {
       padding: 4px 12px;
       text-align: center;
-      span {
-        display: inline-block;
-        width: calc(100% - 24px);
-        white-space: normal;
-        word-break: break-word;
-      }
+      // span {
+      //   display: inline-block;
+      //   width: calc(100% - 24px);
+      //   white-space: normal;
+      //   word-break: break-word;
+      // }
     }
     tr {
       border-bottom: 1px solid

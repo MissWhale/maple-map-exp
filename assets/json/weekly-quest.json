@@ -2,31 +2,43 @@
   {
     "name": "에르다 스펙트럼",
     "exp": 187726220,
-    "min": 200
+    "min": 200,
+    "skipLevel1": 210,
+    "skipLevel2": 220
   },
   {
     "name": "배고픈 무토",
     "exp": 549143140,
-    "min": 210
+    "min": 210,
+    "skipLevel1": 220,
+    "skipLevel2": 225
   },
   {
     "name": "미드나잇 체이서",
     "exp": 817717500,
-    "min": 220
+    "min": 220,
+    "skipLevel1": 225,
+    "skipLevel2": 230
   },
   {
     "name": "스피릿 세이비어",
     "exp": 847484010,
-    "min": 225
+    "min": 225,
+    "skipLevel1": 230,
+    "skipLevel2": 235
   },
   {
     "name": "엔하임 디펜스",
     "exp": 1127760555,
-    "min": 230
+    "min": 230,
+    "skipLevel1": 235,
+    "skipLevel2": 245
   },
   {
     "name": "프로텍트 에스페라",
     "exp": 1161754860,
-    "min": 235
+    "min": 235,
+    "skipLevel1": 245,
+    "skipLevel2": 250
   }
 ]

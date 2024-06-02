@@ -6,35 +6,7 @@ import type { MonsterParkInput } from '~/type/monster-park';
 const monsterPark = useMonsterParkStore();
 const levelStore = useLevelStore();
 const autuSetStore = useAutoSetStore();
-const monsterParkList = computed(() =>
-  MonsterPark.filter((x) => {
-    const type = MonsterParkType.find(
-      (y) => y.min <= levelStore.level && levelStore.level < y.max,
-    );
-    if (type) {
-      const isLevelBetween = levelStore.level >= x.min;
-      return x.type === type.key && isLevelBetween;
-    } else false;
-  })
-    .map((x) => {
-      const defaultLabel = `${x.name} (${x.min} ~ ${x.max})`;
-      if (x.arc) {
-        const label = `${defaultLabel} 포스 : ${makeComma(x.arc)}`;
-        return {
-          ...x,
-          name: label,
-          value: x.key,
-        };
-      } else {
-        return {
-          ...x,
-          name: defaultLabel,
-          value: x.key,
-        };
-      }
-    })
-    .reverse(),
-);
+
 const extreamMonsterParkExp = computed(() =>
   getExtreamMonsterParkExp(levelStore.level),
 );
@@ -91,7 +63,7 @@ const inputList = ref<MonsterParkInput[]>(
         }),
         type: 'number',
         inputType: 'select',
-        options: computed(() => monsterParkList.value),
+        options: computed(() => monsterPark.activeMonsterParkSelectList),
         optionLabel: 'name',
         optionValue: 'key',
         exp: computed(() => {
@@ -173,21 +145,11 @@ const menuText = computed(() => {
 });
 
 const resetClick = () => {
-  inputList.value.forEach((x) => {
-    x.value = null;
-  });
+  monsterPark.monsterParkReset();
 };
 
 const runClick = (n: number) => {
-  const maxExp = monsterParkList.value.reduce((prev, curr) =>
-    prev.exp > curr.exp ? prev : curr,
-  );
-  range(0, n).forEach((x) => {
-    inputList.value[x].value = maxExp.key;
-  });
-  range(n, 6).forEach((x) => {
-    inputList.value[x].value = null;
-  });
+  monsterPark.runMonsterPark(n);
 };
 </script>
 
@@ -221,22 +183,7 @@ const runClick = (n: number) => {
 
 <style scoped lang="scss">
 section.monster-park-container {
-  // display: flex;
-  // flex-direction: column;
-  // row-gap: 16px;
-  // border: 1px solid rgba(var(--v-border-color), var(--v-border-opacity));
-  // border-radius: 8px;
-  // padding: 16px;
   min-width: 652px;
-  // div.monster-park-container-header {
-  //   display: flex;
-  //   flex-direction: row;
-  //   justify-content: space-between;
-  //   p {
-  //     font-size: 20px;
-  //     font-weight: bold;
-  //   }
-  // }
   div.monster-park-actions {
     display: flex;
     flex-direction: row;

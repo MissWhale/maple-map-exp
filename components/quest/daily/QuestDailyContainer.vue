@@ -73,9 +73,7 @@ const menuText = computed(() => {
 });
 
 const resetClick = () => {
-  inputList.value.forEach((x) => {
-    x.value = false;
-  });
+  dailyQuest.dailyQuestReset();
 };
 </script>
 
