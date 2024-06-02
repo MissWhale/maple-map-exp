@@ -1,7 +1,8 @@
 <script setup lang="ts">
-defineProps<{
+const props = defineProps<{
   continent: number;
 }>();
+const continent = computed(() => (props.continent > 1 ? 1 : 0));
 </script>
 
 <template>

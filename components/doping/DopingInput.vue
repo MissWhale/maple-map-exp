@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import type { CaculatorInput } from '~/type/doping/caculator-input';
+import type { CalculatorInput } from '~/type/doping/caculator-input';
 
 defineProps({
   item: {
-    type: Object as PropType<CaculatorInput>,
+    type: Object as PropType<CalculatorInput>,
     required: true,
   },
 });

@@ -1,0 +1,25 @@
+table.daily-quest-check-list-table {
+  tr {
+    td {
+      padding: 0px 16px !important;
+    }
+    td.quest-daily-check-input {
+      min-width: 50px;
+      max-width: 50px;
+      & > div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+    td.quest-daily-check-name {
+      min-width: 100px;
+    }
+    td.quest-daily-check-exp {
+      min-width: 120px;
+    }
+    td.quest-daily-check-exp-per {
+      min-width: 100px;
+    }
+  }
+}

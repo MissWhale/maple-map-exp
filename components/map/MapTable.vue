@@ -59,7 +59,7 @@ const { list, containerProps, wrapperProps } = useVirtualList(selectMapList, {
           variant="outlined"
         />
       </div>
-      <SelectMapSelectButton />
+      <MapSelectButton />
     </div>
     <table v-bind="containerProps" class="map-table" style="height: 600px">
       <thead>
@@ -74,7 +74,7 @@ const { list, containerProps, wrapperProps } = useVirtualList(selectMapList, {
         </tr>
       </thead>
       <tbody v-if="list.length" v-bind="wrapperProps">
-        <SelectMap
+        <MapList
           v-for="item in list"
           :key="item.index"
           style="height: 54px"

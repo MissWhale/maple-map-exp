@@ -28,24 +28,15 @@ const selectOne = ref();
       <VBtn @click="toggle()" color="primary">
         Hello World Vuesax + Nuxtjs
       </VBtn>
-      {{ select }}
-      {{ selectOne }}
-      <div class="test">
-        <!-- <BaseList
-          v-model:selectList="select"
-          :list="test"
-          color="primary"
-        ></BaseList>
-        <BaseList
-          :list="test"
-          v-model:selectList="select"
-          multiple
-          isSelect
-        ></BaseList> -->
-      </div>
-      <!-- <SelectMapTable @click="handleClick" /> -->
-      <DopingContainer />
-      <VBtn color="primary">test</VBtn>
+      <!-- {{ select }}
+      {{ selectOne }} -->
+      <LevelContainer />
+      <!-- <LevelCalculatorContainer />
+        <ElixirContainer /> -->
+      <MonsterParkContainer />
+      <QuestDailyContainer />
+      <!-- <MapTable @click="handleClick" /> -->
+      <!-- <DopingContainer /> -->
     </main>
   </VApp>
 </template>
@@ -53,12 +44,18 @@ const selectOne = ref();
 <style lang="scss">
 main {
   background: rgba(var(--background), 1);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 16px;
+  max-width: 1200px;
+  justify-content: center;
   div.test {
     background: var(--color-background-soft);
     display: flex;
     margin: 0 auto;
-    width: 400px;
-    height: 400px;
+    // width: 400px;
+    // height: 400px;
     flex-direction: row;
     justify-content: center;
     align-items: flex-start;

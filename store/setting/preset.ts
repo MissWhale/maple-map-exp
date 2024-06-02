@@ -1,7 +1,11 @@
 import type { Exp } from '~/type/doping/exp';
 import type { ItemDrop } from '~/type/doping/item-drop';
 import type { Meso } from '~/type/doping/meso';
-import { DEFAULT_EXP, DEFAULT_MESO, DEFAULT_ITEM_DROP } from '../doping';
+import {
+  DEFAULT_EXP,
+  DEFAULT_MESO,
+  DEFAULT_ITEM_DROP,
+} from '~/composables/doping';
 
 type Preset = {
   name: string;

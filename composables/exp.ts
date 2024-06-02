@@ -1,10 +1,10 @@
-import { DEFAULT_EXP } from '~/store';
+import { DEFAULT_EXP } from '~/composables/doping';
 import { usePresetStore } from '~/store/setting/preset';
-import type { CaculatorInput } from '~/type/doping/caculator-input';
+import type { CalculatorInput } from '~/type/doping/caculator-input';
 
 export const useExpCalculator = () => {
   const presetStore = usePresetStore();
-  const expInputList = ref<CaculatorInput[]>([
+  const expInputList = ref<CalculatorInput[]>([
     {
       label: '메르세데스 링크',
       value: computed({
@@ -410,7 +410,7 @@ export const useExpCalculator = () => {
       }),
       type: 'number',
       inputType: 'select',
-      options: burningList,
+      options: mapBurningList,
       optionLabel: 'name',
       optionValue: 'value',
     },
@@ -717,7 +717,7 @@ export const characterTitleList = [
     value: 30,
   },
 ];
-export const burningList = range(0, 11).map((i) => {
+export const mapBurningList = range(0, 11).map((i) => {
   return {
     name: `${i}단계`,
     value: 10 * i,

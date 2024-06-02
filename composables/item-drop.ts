@@ -1,10 +1,10 @@
-import { DEFAULT_ITEM_DROP } from '~/store';
+import { DEFAULT_ITEM_DROP } from '~/composables/doping';
 import { usePresetStore } from '~/store/setting/preset';
-import type { CaculatorInput } from '~/type/doping/caculator-input';
+import type { CalculatorInput } from '~/type/doping/caculator-input';
 
 export const useItemDropCalculator = () => {
   const presetStore = usePresetStore();
-  const itemDropInputList = ref<CaculatorInput[]>([
+  const itemDropInputList = ref<CalculatorInput[]>([
     {
       label: '재물획득의 비약',
       value: computed({

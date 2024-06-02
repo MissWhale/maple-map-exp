@@ -12,7 +12,7 @@ const props = defineProps({
       if (props.type === 'area') {
         return value >= 0 && value < 19;
       } else if (props.type === 'force') {
-        return value >= 0 && value < 2;
+        return value >= 0 && value < 3;
       } else {
         return value >= 0 && value < 7;
       }

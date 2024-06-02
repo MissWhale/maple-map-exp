@@ -1,7 +1,7 @@
 import mesoRates from '@/assets/json/meso.json';
-import { DEFAULT_MESO } from '~/store';
+import { DEFAULT_MESO } from '~/composables/doping';
 import { usePresetStore } from '~/store/setting/preset';
-import type { CaculatorInput } from '~/type/doping/caculator-input';
+import type { CalculatorInput } from '~/type/doping/caculator-input';
 export const MesoRates = mesoRates;
 export const defaultMeso = (monsterLevel: number) => {
   return {
@@ -27,7 +27,7 @@ const findMesoRate = (levelDifference: number) => {
 
 export const useMesoCalculator = () => {
   const presetStore = usePresetStore();
-  const mesoInputList = ref<CaculatorInput[]>([
+  const mesoInputList = ref<CalculatorInput[]>([
     {
       label: '재물획득의 비약',
       value: computed({

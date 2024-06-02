@@ -1,97 +1,92 @@
 [
   {
     "name": "여로",
-    "areaKey": 0,
-    "continent": 0
-  },
-  {
-    "name": "리버스 시티",
-    "areaKey": 1,
+    "exp": 732132258,
+    "min": 200,
     "continent": 0
   },
   {
     "name": "츄츄",
-    "areaKey": 2,
-    "continent": 0
-  },
-  {
-    "name": "얌얌",
-    "areaKey": 3,
+    "exp": 2141658246,
+    "min": 210,
     "continent": 0
   },
   {
     "name": "레헬른",
-    "areaKey": 4,
+    "exp": 3189098250,
+    "min": 220,
     "continent": 0
   },
   {
     "name": "아르카나",
-    "areaKey": 5,
+    "exp": 3305187639,
+    "min": 225,
     "continent": 0
   },
   {
     "name": "모라스",
-    "areaKey": 6,
+    "exp": 4398266165,
+    "min": 230,
     "continent": 0
   },
   {
     "name": "에스페라",
-    "areaKey": 7,
-    "continent": 0
-  },
-  {
-    "name": "셀라스",
-    "areaKey": 8,
+    "exp": 4530843954,
+    "min": 235,
     "continent": 0
   },
   {
     "name": "문브릿지",
-    "areaKey": 9,
+    "exp": 8397548775,
+    "min": 245,
     "continent": 1
   },
   {
     "name": "고통의 미궁",
-    "areaKey": 10,
+    "exp": 9057690000,
+    "min": 250,
     "continent": 1
   },
   {
     "name": "리멘",
-    "areaKey": 11,
+    "exp": 10225741680,
+    "min": 255,
     "continent": 1
   },
   {
-    "name": "세르니움(전)",
-    "areaKey": 12,
-    "continent": 2
-  },
-  {
-    "name": "세르니움(후)",
-    "areaKey": 13,
+    "name": "세르니움",
+    "exp": 16455682080,
+    "min": 260,
     "continent": 2
   },
   {
     "name": "호텔 아르크스",
-    "areaKey": 14,
+    "exp": 19371792600,
+    "min": 265,
     "continent": 2
   },
   {
     "name": "오디움",
-    "areaKey": 15,
+    "exp": 23246151120,
+    "min": 270,
     "continent": 2
   },
   {
     "name": "도원경",
-    "areaKey": 16,
+    "exp": 32127015480,
+    "min": 275,
     "continent": 2
   },
   {
     "name": "아르테리아",
-    "areaKey": 17,
+    "exp": 38593455264,
+    "min": 280,
     "continent": 2
   },
   {
     "name": "카르시온",
-    "areaKey": 18,
+    "exp": 45635222880,
+    "min": 285,
     "continent": 2
   }
 ]

@@ -159,3 +159,41 @@ input[type='number']::-webkit-inner-spin-button,
 input[type='number']::-webkit-outer-spin-button {
   -webkit-appearance: none;
 }
+section.section {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+  border: 1px solid rgba(var(--v-border-color), var(--v-border-opacity));
+  border-radius: 8px;
+  padding: 16px;
+  & > div.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    p {
+      font-size: 20px;
+      font-weight: bold;
+    }
+  }
+  table.common-table {
+    th {
+      height: 40px;
+      font-weight: 500;
+    }
+    th,
+    td {
+      padding: 4px 12px;
+      text-align: center;
+      span {
+        display: inline-block;
+        width: calc(100% - 24px);
+        white-space: normal;
+        word-break: break-word;
+      }
+    }
+    tr {
+      border-bottom: 1px solid
+        rgba(var(--v-border-color), var(--v-border-opacity));
+    }
+  }
+}

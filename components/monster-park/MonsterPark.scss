@@ -1,0 +1,27 @@
+table.monster-park-input-list-table {
+  th,
+  td {
+    padding: 4px 12px;
+    text-align: center;
+    span {
+      display: inline-block;
+      width: calc(100% - 24px);
+      white-space: normal;
+      word-break: break-word;
+    }
+  }
+  tr {
+    border-bottom: 1px solid
+      rgba(var(--v-border-color), var(--v-border-opacity));
+    td.monster-park-select {
+      min-width: 310px;
+      text-align: left;
+    }
+    td.monster-park-input-exp {
+      min-width: 80px;
+    }
+    td.monster-park-input-exp-per {
+      min-width: 50px;
+    }
+  }
+}
