@@ -2,34 +2,53 @@
 import { useLevelStore } from '~/store/level';
 
 const levelStore = useLevelStore();
-const infoList = computed(() => {
-  const maxExp = getMaxExp(levelStore.level);
-  const currentExp = levelStore.isPercent
-    ? +Math.round(maxExp * (levelStore.exp / 100)).toFixed(0)
-    : levelStore.exp;
-  const currentExpPercent = levelStore.isPercent
-    ? levelStore.exp
-    : Math.round((currentExp / maxExp) * 100).toFixed(3);
-  return [
-    {
-      title: '계산전 정보',
-      level: levelStore.level,
-      exp: currentExp,
-      maxExp: maxExp,
-      percent: currentExpPercent,
-    },
-  ];
-});
+const beforeInfo = computed(() => ({
+  title: '계산전 정보',
+  level: levelStore.level,
+  exp: levelStore.currentExp,
+  maxExp: levelStore.currentLevelMaxExp,
+  percent: levelStore.currentExpPercent,
+}));
+const afterInfo = computed(() => ({
+  title: '계산후 정보',
+  level: levelStore.afterLevel,
+  exp: levelStore.afterExp,
+  maxExp: levelStore.afterMaxExp,
+  percent: levelStore.afterExpPercent,
+}));
 </script>
 
 <template>
-  <section class="level-calculator-container">
-    <dl v-for="info in infoList" :key="info.title">
-      <h2>{{ info.title }}</h2>
-      <dt>LV.{{ info.level }}</dt>
-      <dd>{{ makeComma(info.exp) }} / {{ makeComma(info.maxExp) }}</dd>
-      <dd>{{ info.percent }}%</dd>
-    </dl>
+  <section class="level-calculator-container section">
+    <div class="header">
+      <p>{{ levelStore.viewDate }}</p>
+    </div>
+    <div>
+      <dl>
+        <h2>{{ beforeInfo.title }}</h2>
+        <dt>LV.{{ beforeInfo.level }}</dt>
+        <dd>
+          {{ makeComma(beforeInfo.exp) }} / {{ makeComma(beforeInfo.maxExp) }}
+        </dd>
+        <dd>{{ beforeInfo.percent }}%</dd>
+      </dl>
+      <div>
+        <VProgressLinear :modelValue="beforeInfo.percent" color="success" />
+      </div>
+    </div>
+    <div>
+      <dl>
+        <h2>{{ afterInfo.title }}</h2>
+        <dt>LV.{{ afterInfo.level }}</dt>
+        <dd>
+          {{ makeComma(afterInfo.exp) }} / {{ makeComma(afterInfo.maxExp) }}
+        </dd>
+        <dd>{{ afterInfo.percent }}%</dd>
+      </dl>
+      <div>
+        <VProgressLinear :modelValue="afterInfo.percent" color="success" />
+      </div>
+    </div>
   </section>
 </template>
 

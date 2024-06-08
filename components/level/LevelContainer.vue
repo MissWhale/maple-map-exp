@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import { useLevelStore } from '~/store/level';
+import { useLevelStore } from '~/store';
 import type { CalculatorInput } from '~/type/doping/caculator-input';
 
 const levelStore = useLevelStore();
+
 const inputList = ref<CalculatorInput[]>([
   {
     label: '레벨',
@@ -14,6 +15,7 @@ const inputList = ref<CalculatorInput[]>([
         if (value < 1) value = 1;
         if (value > 299) value = 299;
         levelStore.level = value;
+        levelStore.afterLevel = value;
       },
     }),
     type: 'number',
@@ -88,24 +90,26 @@ const inputList = ref<CalculatorInput[]>([
     inputType: 'input',
     max: levelStore.maxExp,
     prefix: levelStore.isPercent ? 3 : 0,
+    suffix: computed(() => (levelStore.isPercent ? '%' : '')),
     step: levelStore.isPercent ? 0.001 : 1,
     min: 0,
   },
-  {
-    label: 'EXP 쿠폰',
-    value: computed({
-      get() {
-        return levelStore.expCoupon;
-      },
-      set(value: number) {
-        if (value < 0) value = 0;
-        levelStore.expCoupon = value;
-      },
-    }),
-    type: 'number',
-    inputType: 'input',
-    min: 0,
-  },
+  // {
+  //   label: 'EXP 쿠폰',
+  //   value: computed({
+  //     get() {
+  //       return levelStore.expCoupon;
+  //     },
+  //     set(value: number) {
+  //       if (value < 0) value = 0;
+  //       levelStore.expCoupon = value;
+  //     },
+  //   }),
+  //   type: 'number',
+  //   inputType: 'input',
+  //   suffix: '개',
+  //   min: 0,
+  // },
 ]);
 </script>
 

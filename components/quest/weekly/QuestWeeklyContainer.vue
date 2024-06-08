@@ -54,13 +54,13 @@ const inputList = ref<WeeklyQuestInput[]>(
 );
 
 const autoSelectButtonName = computed(() => {
-  return autoSet.weeklyQuestAutuSelect ? '자동선택 해제' : '자동선택 설정';
+  return autoSet.weeklyQuestAutoSelect ? '자동선택 해제' : '자동선택 설정';
 });
 const autoSelectButtonColor = computed(() => {
-  return autoSet.weeklyQuestAutuSelect ? 'warning' : 'success';
+  return autoSet.weeklyQuestAutoSelect ? 'warning' : 'success';
 });
 const autoSelectClick = () => {
-  autoSet.weeklyQuestAutuSelect = !autoSet.weeklyQuestAutuSelect;
+  autoSet.weeklyQuestAutoSelect = !autoSet.weeklyQuestAutoSelect;
 };
 
 const resetClick = () => {

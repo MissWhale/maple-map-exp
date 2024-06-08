@@ -13,8 +13,8 @@ export const useAutoSetStore = defineStore(
       arcaneExpAdd: 0,
       authenticExpAdd: 0,
     });
-    const weeklyQuestAutuSelect = ref(false);
-
+    const weeklyQuestAutoSelect = ref(false);
+    const expCouponAutoSelect = ref(false);
     const monsterParkAddExp = computed(() => {
       const find = MonsterParkExpAddList.find(
         (x) => x.id === monsterPark.value.expAdd,
@@ -59,7 +59,8 @@ export const useAutoSetStore = defineStore(
       dailyQuest,
       dailyQuestArcaneAddExp,
       dailyQuestAuthenticAddExp,
-      weeklyQuestAutuSelect,
+      weeklyQuestAutoSelect,
+      expCouponAutoSelect,
     };
   },
   {

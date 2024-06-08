@@ -6,9 +6,14 @@ export interface Option {
 }
 export interface CalculatorInput {
   label: string;
-  value: WritableComputedRef<number | boolean | null> | number | boolean | null;
+  value:
+    | WritableComputedRef<number | boolean | null>
+    | ComputedRef<number>
+    | number
+    | boolean
+    | null;
   type: 'number' | 'text' | 'boolean';
-  inputType: 'select' | 'input' | 'switch' | 'checkbox';
+  inputType: 'select' | 'input' | 'switch' | 'checkbox' | 'text';
   options?: Option[] | ComputedRef<Option[]>;
   optionLabel?: string;
   optionValue?: string;
@@ -17,4 +22,6 @@ export interface CalculatorInput {
   min?: number;
   step?: number;
   prefix?: number;
+  suffix?: ComputedRef<string> | string;
+  disabled?: ComputedRef<boolean> | boolean;
 }

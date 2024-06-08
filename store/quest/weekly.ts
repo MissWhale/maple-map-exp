@@ -21,7 +21,7 @@ export const useWeeklyQuestStore = defineStore('weeklyQuest', () => {
   );
   const autoSelectWeeklyQuest = () => {
     if (level.level < 200) return resetWeeklyQuest();
-    if (autoSet.weeklyQuestAutuSelect) {
+    if (autoSet.weeklyQuestAutoSelect) {
       weeklyQuest.value
         .filter((x) => x.min <= level.level)
         .forEach((quest) => {
@@ -41,7 +41,7 @@ export const useWeeklyQuestStore = defineStore('weeklyQuest', () => {
     });
   };
   watch(() => level.level, autoSelectWeeklyQuest);
-  watch(() => autoSet.weeklyQuestAutuSelect, autoSelectWeeklyQuest);
+  watch(() => autoSet.weeklyQuestAutoSelect, autoSelectWeeklyQuest);
   onMounted(() => {
     autoSelectWeeklyQuest();
   });

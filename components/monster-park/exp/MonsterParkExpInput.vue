@@ -33,6 +33,7 @@ function inputBlur(item: CalculatorInput) {
           :max="item.max"
           min="0"
           :step="item.step"
+          suffix="%"
           color="primary"
           variant="outlined"
           hideDetails

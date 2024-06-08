@@ -120,7 +120,7 @@ const addExpList = ref<CalculatorInput[]>([
     optionValue: 'id',
   },
   {
-    label: '추가 경험치 %',
+    label: '추가 경험치',
     value: computed({
       get() {
         return autuSetStore.monsterPark.etcExpAdd;
