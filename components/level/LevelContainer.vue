@@ -14,8 +14,8 @@ const inputList = ref<CalculatorInput[]>([
       set(value: number) {
         if (value < 1) value = 1;
         if (value > 299) value = 299;
-        levelStore.level = value;
-        levelStore.afterLevel = value;
+        levelStore.level = +value;
+        levelStore.afterLevel = +value;
       },
     }),
     type: 'number',

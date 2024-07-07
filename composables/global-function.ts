@@ -2,7 +2,7 @@ export function makeComma(
   value: number | string | null | undefined | ComputedRef<number>,
 ): string | null {
   if (typeof value === 'object') {
-    return String(unref(value));
+    return makeComma(String(unref(value)));
   }
   if (value === null || value === undefined) return null;
   else if (typeof value === 'string')
@@ -12,6 +12,9 @@ export function makeComma(
 export function range(start: number, end: number): number[] {
   const arr = Array.from({ length: end - start }, (_, i) => start + i);
   return arr;
+}
+export function calculatorPercent(exp: number, maxExp: number): number {
+  return +(Math.round((exp / maxExp) * 100000) / 1000).toFixed(3);
 }
 
 export function getIsSunday(inDate: Date): boolean {

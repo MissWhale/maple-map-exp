@@ -40,6 +40,10 @@ export const useWeeklyQuestStore = defineStore('weeklyQuest', () => {
       quest.count = 0;
     });
   };
+  watch(totalWeeklyQuestExp, async (newVal, oldVal) => {
+    await level.afterLevelMinusExp(oldVal);
+    await level.afterLevelPlusExp(newVal);
+  });
   watch(() => level.level, autoSelectWeeklyQuest);
   watch(() => autoSet.weeklyQuestAutoSelect, autoSelectWeeklyQuest);
   onMounted(() => {

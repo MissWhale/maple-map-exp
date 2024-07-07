@@ -9,4 +9,5 @@ export type ElixirInfo = {
   useExp: number | ComputedRef<number>;
   useExpPer: number | ComputedRef<number>;
   valueCount: number | WritableComputedRef<number>;
+  disabled: boolean | ComputedRef<boolean>;
 };

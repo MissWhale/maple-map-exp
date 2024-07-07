@@ -40,6 +40,10 @@ export const useDailyQuestStore = defineStore('dailyQuest', () => {
       quest.isCheck = false;
     });
   };
+  watch(totalDailyQuestExp, async (newVal, oldVal) => {
+    await level.afterLevelMinusExp(oldVal);
+    await level.afterLevelPlusExp(newVal);
+  });
   watch(
     () => level.level,
     () => dailyQuestReset(),

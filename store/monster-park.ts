@@ -98,6 +98,10 @@ export const useMonsterParkStore = defineStore('monsterPark', () => {
     () => levelStore.level,
     () => monsterParkReset(),
   );
+  watch(totalMonsterParkExp, async (newVal, oldVal) => {
+    await levelStore.afterLevelMinusExp(oldVal);
+    await levelStore.afterLevelPlusExp(newVal);
+  });
   return {
     monsterParkList,
     activeMonsterParkSelectList,

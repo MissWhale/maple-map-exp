@@ -1,6 +1,7 @@
 <script setup lang="ts">
+import { useLevelStore } from '~/store';
 import type { ElixirInfo } from '~/type/elixir';
-
+const level = useLevelStore();
 const props = defineProps({
   elixirInfo: {
     type: Object as PropType<ElixirInfo>,
@@ -8,12 +9,17 @@ const props = defineProps({
   },
 });
 function click() {
+  if (props.elixirInfo.disabled) return;
   props.elixirInfo.valueCount = +props.elixirInfo.valueCount + 1;
 }
 </script>
 
 <template>
-  <li class="elixir-info" @click="click">
+  <li
+    class="elixir-info"
+    :class="{ disabled: elixirInfo.disabled }"
+    @click="click"
+  >
     <div class="elixir-image">
       <ImageAssets type="elixir" :number="elixirInfo.key" />
     </div>
@@ -37,8 +43,12 @@ li.elixir-info {
   align-items: center;
   padding: 4px;
   cursor: pointer;
-  &:hover {
+  &:not(.disabled):hover {
     background-color: rgba(var(--v-theme-primary), 0.04);
+  }
+  &.disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
   }
   .elixir-image {
     grid-row: 1/2 span;

@@ -2,42 +2,49 @@
   {
     "key": 0,
     "elixir": "익스트림 성장의 비약",
+    "startLevel": 130,
     "endLevel": 199,
     "exp": 571115568
   },
   {
     "key": 1,
     "elixir": "성장의 비약 (200~209)",
+    "startLevel": 200,
     "endLevel": 209,
     "exp": 6120258214
   },
   {
     "key": 2,
-    "elixir": "성장의 비약 (200~209)",
+    "elixir": "성장의 비약 (200~219)",
+    "startLevel": 200,
     "endLevel": 219,
     "exp": 22164317197
   },
   {
     "key": 3,
-    "elixir": "성장의 비약 (220~229)",
+    "elixir": "성장의 비약 (200~229)",
+    "startLevel": 200,
     "endLevel": 229,
     "exp": 64359295696
   },
   {
     "key": 4,
     "elixir": "태풍 성장의 비약",
+    "startLevel": 200,
     "endLevel": 239,
     "exp": 137783000000
   },
   {
     "key": 5,
     "elixir": "극한 성장의 비약",
+    "startLevel": 200,
     "endLevel": 249,
     "exp": 294972000000
   },
   {
     "key": 6,
     "elixir": "초월 성장의 비약",
+    "startLevel": 200,
     "endLevel": 269,
     "exp": 2438050000000
   }

@@ -43,13 +43,13 @@ export const useExpCouponStore = defineStore('expCoupon', () => {
   const isAvailableUseExpCoupon = computed(() => {
     return currentExpCoupon.value > 0;
   });
+  const totalExpCouponExp = computed(() => {
+    return useExp.value.reduce((acc, cur) => acc + cur, 0);
+  });
   const useExpCoupon = async (count: number) => {
-    console.log(count);
     const exp = currentLevelExpCoupon.value * count;
-    console.log(exp);
     const leftExp = await level.afterLevelPlusExp(exp);
-    console.log(exp, leftExp);
-    useExp.value.push(leftExp ?? exp);
+    useExp.value.push(leftExp || exp);
     todayUseExpCoupon.value += count;
     currentExpCoupon.value -= count;
     expCouponInputReset();
@@ -84,6 +84,7 @@ export const useExpCouponStore = defineStore('expCoupon', () => {
     currentLevelExpCoupon,
     currentLevelAvailableExpCoupon,
     isAvailableUseExpCoupon,
+    totalExpCouponExp,
     useExp,
     useExpCoupon,
     resetTodayUseExpCoupon,

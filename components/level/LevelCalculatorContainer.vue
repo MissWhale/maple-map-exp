@@ -54,5 +54,6 @@ const afterInfo = computed(() => ({
 
 <style scoped lang="scss">
 section.level-calculator-container {
+  min-width: 350px;
 }
 </style>

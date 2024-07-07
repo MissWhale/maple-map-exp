@@ -1,0 +1,32 @@
+table {
+  th,
+  td {
+    padding: 12px 12px;
+    text-align: center;
+    span {
+      display: inline-block;
+      width: calc(100% - 24px);
+      white-space: normal;
+      word-break: break-word;
+    }
+  }
+  tr {
+    border-bottom: 1px solid
+      rgba(var(--v-border-color), var(--v-border-opacity));
+    td {
+      white-space: normal;
+      word-break: break-word;
+    }
+    td.contents {
+      min-width: 80px;
+      text-align: left;
+    }
+    td.exp {
+      min-width: 80px;
+    }
+    td.percent {
+      min-width: 50px;
+      max-width: 97px;
+    }
+  }
+}

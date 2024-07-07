@@ -1,44 +1,29 @@
 <script setup lang="ts">
 const { toggle, isDark } = useCustomTheme();
+
 function handleClick(key: number) {
   console.log('click', key);
 }
-const test = [
-  { title: 'test1', value: 1, icon: 'mdi:account-arrow-down' },
-  { title: 'test2', value: 2 },
-  {
-    title: 'test5',
-    value: 5,
-    icon: 'mdi:user',
-    subList: [
-      { title: 'test', value: 'test' },
-      { title: 'test1', value: 'test1' },
-    ],
-  },
-  { title: 'test3', value: 3 },
-  { title: 'test4', value: 4 },
-];
-const select = ref([]);
-const selectOne = ref();
+
+const dialogView = ref(false);
 </script>
 
 <template>
   <VApp :theme="isDark ? 'dark' : 'light'">
+    <VBtn @click="toggle()" color="primary"> Hello World Vuesax + Nuxtjs </VBtn>
     <main>
-      <VBtn @click="toggle()" color="primary">
-        Hello World Vuesax + Nuxtjs
-      </VBtn>
-      <!-- {{ select }}
-      {{ selectOne }} -->
       <LevelContainer />
       <LevelCalculatorContainer />
+      <LevelTotalExpContainer />
       <ExpCouponContainer />
 
       <ElixirContainer />
-      <!-- <MonsterParkContainer /> -->
+      <MonsterParkContainer />
       <QuestDailyContainer />
       <QuestWeeklyContainer />
       <!-- <MapTable @click="handleClick" /> -->
+      <MapDialog v-model="dialogView" />
+      <VBtn @click="dialogView = true">Open Dialog</VBtn>
       <!-- <DopingContainer /> -->
     </main>
   </VApp>
@@ -51,7 +36,7 @@ main {
   flex-direction: row;
   flex-wrap: wrap;
   gap: 16px;
-  max-width: 1200px;
+  padding: 16px;
   justify-content: center;
   div.test {
     background: var(--color-background-soft);
