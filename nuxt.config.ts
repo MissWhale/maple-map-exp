@@ -19,6 +19,7 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@pinia-plugin-persistedstate/nuxt',
     'vuetify-nuxt-module',
+    "@nuxthub/core"
   ],
   build: {
     transpile: ['vuetify'],

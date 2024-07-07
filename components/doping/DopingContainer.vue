@@ -48,6 +48,7 @@ const dopingInfoList = computed(() => [
         </template>
       </dl>
     </div>
+    <v-divider />
     <div class="doping-selection">
       <VBtnToggle v-model="dopingSelection" mandatory>
         <VBtn
@@ -79,8 +80,10 @@ section.doping-section {
         color: $primary;
       }
     }
+    margin-bottom: 20px;
   }
-  .doping-selection {
+  div.doping-selection {
+    margin-top: 20px;
     display: flex;
     justify-content: center;
     & > div {

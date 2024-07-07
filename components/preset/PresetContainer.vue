@@ -72,6 +72,7 @@ function deleteClick(name: string) {
           size="large"
           @click="presetStore.addPreset()"
         ></VBtn>
+        <DopingDialog />
       </div>
       <div class="preset-update">
         <VBtn density="default" color="secondary" @click="renameClick"

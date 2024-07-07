@@ -4,8 +4,6 @@ const { toggle, isDark } = useCustomTheme();
 function handleClick(key: number) {
   console.log('click', key);
 }
-
-const dialogView = ref(false);
 </script>
 
 <template>
@@ -22,8 +20,8 @@ const dialogView = ref(false);
       <QuestDailyContainer />
       <QuestWeeklyContainer />
       <!-- <MapTable @click="handleClick" /> -->
-      <MapDialog v-model="dialogView" />
-      <VBtn @click="dialogView = true">Open Dialog</VBtn>
+      <HuntDialog />
+      <!-- <VBtn @click="dialogView = true">Open Dialog</VBtn> -->
       <!-- <DopingContainer /> -->
     </main>
   </VApp>
