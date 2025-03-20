@@ -12,3 +12,7 @@ dotenv.config({
     })(process.env.NODE_ENV),
   ),
 });
+export function isCloudflareEnvironment() {
+  // Cloudflare Workers 환경에서만 존재하는 전역 객체 확인
+  return typeof globalThis.caches !== 'undefined';
+}
