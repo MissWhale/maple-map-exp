@@ -11,9 +11,9 @@ jobs:
     permissions:
       contents: read
       id-token: write
-    defaults:
-      run:
-        working-directory: /
+    # defaults:
+    #   run:
+    #     working-directory: /
 
     steps:
       - name: Checkout
@@ -38,4 +38,5 @@ jobs:
         id: deploy
         with:
           project-key: maple-map-exp-oe05
-          directory: //dist
+          # directory: //dist
+          directory: dist
