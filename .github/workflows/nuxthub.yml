@@ -3,7 +3,7 @@ on: push
 
 jobs:
   deploy:
-    name: "Deploy to NuxtHub"
+    name: 'Deploy to NuxtHub'
     runs-on: ubuntu-latest
     environment:
       name: ${{ github.ref == 'refs/heads/main' && 'production' || 'preview' }}
@@ -11,36 +11,32 @@ jobs:
     permissions:
       contents: read
       id-token: write
-    defaults:
-      run:
-        working-directory: /
+    # defaults:
+    #   run:
+    #     working-directory: /
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 9
-
-      - name: Install Node.js
+      - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: 22
-          cache: 'pnpm'
+          node-version: 20.x
 
       - name: Install dependencies
-        run: pnpm install
+        run: yarn install
 
-      - name: Ensure NuxtHub module is installed
-        run: pnpx nuxthub@latest ensure
+      # - name: Ensure NuxtHub module is installed
+      #   run: yarn nuxthub@latest ensure
 
       - name: Build application
-        run: pnpm build
+        run: yarn build
 
       - name: Deploy to NuxtHub
         uses: nuxt-hub/action@v1
         id: deploy
         with:
           project-key: maple-map-exp-oe05
-          directory: //dist
+          # directory: //dist
+          directory: dist
