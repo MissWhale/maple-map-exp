@@ -1,14 +1,6 @@
 import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify';
-import { isCloudflareEnvironment } from './env';
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  runtimeConfig: {
-    public: {
-      nxopenApiKey: isCloudflareEnvironment()
-        ? env.NEXT_PUBLIC_NXOPEN_API_KEY
-        : process.env.NEXT_PUBLIC_NXOPEN_API_KEY,
-    },
-  },
   app: {
     head: {
       link: [
