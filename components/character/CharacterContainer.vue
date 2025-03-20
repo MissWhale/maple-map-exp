@@ -90,6 +90,7 @@ async function handleSearch() {
 
 <style scoped lang="scss">
 section.character-container {
+  min-width: 300px;
   div.character-search {
     padding: 8px 0;
   }

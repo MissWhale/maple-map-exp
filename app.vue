@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useBossStore } from './store';
 
-const { toggle, isDark } = useCustomTheme();
+// const { toggle, isDark } = useCustomTheme();
 const bossStore = useBossStore();
 function handleClick(key: number) {
   console.log('click', key);
@@ -9,7 +9,8 @@ function handleClick(key: number) {
 </script>
 
 <template>
-  <VApp :theme="isDark ? 'dark' : 'light'">
+  <!-- <VApp :theme="isDark ? 'dark' : 'light'"> -->
+  <VApp>
     <!-- <VBtn @click="toggle()" color="primary"> Hello World Vuesax + Nuxtjs </VBtn> -->
     <main>
       <CharacterContainer />

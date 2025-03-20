@@ -172,6 +172,9 @@ export const useBossStore = defineStore(
         character.isCleared = !character.isCleared;
       }
     }
+    onMounted(() => {
+      selectCharacter.value = null;
+    });
     return {
       characterList,
       selectCharacter,
