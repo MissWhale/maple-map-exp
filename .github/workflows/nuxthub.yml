@@ -27,8 +27,8 @@ jobs:
       - name: Install dependencies
         run: yarn install
 
-      - name: Ensure NuxtHub module is installed
-        run: yarn nuxthub@latest ensure
+      # - name: Ensure NuxtHub module is installed
+      #   run: yarn nuxthub@latest ensure
 
       - name: Build application
         run: yarn build
