@@ -7,14 +7,6 @@ export default defineNuxtConfig({
       nxopenApiKey: process.env.NEXT_PUBLIC_NXOPEN_API_KEY,
     },
   },
-  typescript: {
-    typeCheck: true,
-    tsConfig: {
-      compilerOptions: {
-        types: ['node'],
-      },
-    },
-  },
   app: {
     head: {
       link: [
@@ -89,12 +81,6 @@ export default defineNuxtConfig({
       },
     },
   },
-
-  // sourcemap: {
-  //   server: false,
-  //   client: false,
-  // },
-  // css: ['@/assets/global.css'],
   vite: {
     vue: {
       template: {
@@ -106,16 +92,6 @@ export default defineNuxtConfig({
         scss: {
           additionalData: '@use "@/assets/main.scss" as *;',
         },
-        // css: {
-        //   additionalData: '@import "~/assets/base.css";',
-        // },
-        // scss: {
-        //   additionalData: `
-        //   @use "@/assets/variables/_variables.scss" as *;
-        //   @use "vuetify/lib/styles/settings/variables" as *;
-        //   @import "~/assets/main.scss";`,
-        //   // additionalData: '@import "~/assets/global.scss";',
-        // },
       },
     },
   },
