@@ -27,12 +27,6 @@ export default defineNuxtConfig({
   build: {
     transpile: ['vuetify'],
   },
-  nitro: {
-    preset: 'cloudflare-pages',
-    cloudflare: {
-      nodeCompat: true,
-    },
-  },
   vuetify: {
     moduleOptions: {
       /* other module options */
