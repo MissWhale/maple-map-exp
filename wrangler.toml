@@ -1,3 +1,4 @@
+name = "maple-map-exp"
 compatibility_flags = [ "nodejs_compat" ]
 compatibility_date = "2024-03-19"  # 현재 날짜 또는 최근 날짜
 pages_build_output_dir = "./dist"
