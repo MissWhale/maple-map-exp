@@ -7,6 +7,14 @@ export default defineNuxtConfig({
       nxopenApiKey: process.env.NEXT_PUBLIC_NXOPEN_API_KEY,
     },
   },
+  typescript: {
+    typeCheck: true,
+    tsConfig: {
+      compilerOptions: {
+        types: ['node'],
+      },
+    },
+  },
   app: {
     head: {
       link: [
