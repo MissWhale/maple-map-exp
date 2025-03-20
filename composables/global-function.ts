@@ -35,3 +35,25 @@ export function dateFormat(date?: Date | string): string {
     setDate.getFullYear() + '-' + month + '-' + day + '(' + dayOfWeek + ')'
   );
 }
+export function transformKoreanBossReward(reward: number): string {
+  const units = ['', '만', '억', '조'];
+  const value = reward.toString();
+  const length = value.length;
+  const unitIndex = Math.floor((length - 1) / 4);
+
+  if (unitIndex === 0) {
+    return value;
+  }
+
+  const result = [];
+  for (let i = unitIndex; i >= 0; i--) {
+    const start = Math.max(0, length - (i + 1) * 4);
+    const end = length - i * 4;
+    const num = parseInt(value.slice(start, end));
+    if (num > 0) {
+      result.push(num + units[i]);
+    }
+  }
+
+  return result.join(' ');
+}

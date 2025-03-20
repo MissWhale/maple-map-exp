@@ -184,16 +184,17 @@ section.section {
     td {
       padding: 4px 12px;
       text-align: center;
-      // span {
-      //   display: inline-block;
-      //   width: calc(100% - 24px);
-      //   white-space: normal;
-      //   word-break: break-word;
-      // }
     }
     tr {
       border-bottom: 1px solid
         rgba(var(--v-border-color), var(--v-border-opacity));
     }
   }
+}
+section.card-container {
+  padding: 12px 12px 20px;
+  border: 1px solid rgba(var(--v-border-color), var(--v-border-opacity));
+  border-radius: 8px;
+  width: fit-content;
+  height: fit-content;
 }

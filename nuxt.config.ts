@@ -1,6 +1,12 @@
 import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify';
+import './env';
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  runtimeConfig: {
+    public: {
+      nxopenApiKey: process.env.NEXT_PUBLIC_NXOPEN_API_KEY,
+    },
+  },
   app: {
     head: {
       link: [
@@ -12,18 +18,22 @@ export default defineNuxtConfig({
       ],
     },
   },
+
   ssr: false,
   devtools: { enabled: false },
   css: ['vuetify/styles'],
+
   modules: [
     '@pinia/nuxt',
     '@pinia-plugin-persistedstate/nuxt',
     'vuetify-nuxt-module',
-    "@nuxthub/core"
+    '@nuxthub/core',
   ],
+
   build: {
     transpile: ['vuetify'],
   },
+
   vuetify: {
     moduleOptions: {
       /* other module options */
@@ -71,6 +81,12 @@ export default defineNuxtConfig({
       },
     },
   },
+
+  // sourcemap: {
+  //   server: false,
+  //   client: false,
+  // },
+  // css: ['@/assets/global.css'],
   vite: {
     vue: {
       template: {
@@ -80,7 +96,7 @@ export default defineNuxtConfig({
     css: {
       preprocessorOptions: {
         scss: {
-          additionalData: '@import "@/assets/main.scss";',
+          additionalData: '@use "@/assets/main.scss" as *;',
         },
         // css: {
         //   additionalData: '@import "~/assets/base.css";',
@@ -95,9 +111,6 @@ export default defineNuxtConfig({
       },
     },
   },
-  // sourcemap: {
-  //   server: false,
-  //   client: false,
-  // },
-  // css: ['@/assets/global.css'],
+
+  compatibilityDate: '2025-03-19',
 });
