@@ -1,0 +1,38 @@
+table.map-table {
+  th,
+  td {
+    padding: 8px;
+    text-align: center;
+  }
+  th.area,
+  td.area {
+    min-width: 150px;
+  }
+  th.map,
+  td.map {
+    min-width: 280px;
+  }
+  th.force,
+  td.force {
+    min-width: 70px;
+    max-width: 100px;
+  }
+  th.regen,
+  td.regen {
+    min-width: 100px;
+  }
+  th.max-hour,
+  td.max-hour {
+    max-width: 110px;
+    min-width: 100px;
+  }
+  th.level,
+  td.level {
+    min-width: 150px;
+  }
+  th.monster,
+  td.monster {
+    min-width: 200px;
+    width: 100%;
+  }
+}

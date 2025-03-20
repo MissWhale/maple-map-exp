@@ -1,0 +1,97 @@
+[
+  {
+    "name": "여로",
+    "areaKey": 0,
+    "continent": 0
+  },
+  {
+    "name": "리버스 시티",
+    "areaKey": 1,
+    "continent": 0
+  },
+  {
+    "name": "츄츄",
+    "areaKey": 2,
+    "continent": 0
+  },
+  {
+    "name": "얌얌",
+    "areaKey": 3,
+    "continent": 0
+  },
+  {
+    "name": "레헬른",
+    "areaKey": 4,
+    "continent": 0
+  },
+  {
+    "name": "아르카나",
+    "areaKey": 5,
+    "continent": 0
+  },
+  {
+    "name": "모라스",
+    "areaKey": 6,
+    "continent": 0
+  },
+  {
+    "name": "에스페라",
+    "areaKey": 7,
+    "continent": 0
+  },
+  {
+    "name": "셀라스",
+    "areaKey": 8,
+    "continent": 0
+  },
+  {
+    "name": "문브릿지",
+    "areaKey": 9,
+    "continent": 1
+  },
+  {
+    "name": "고통의 미궁",
+    "areaKey": 10,
+    "continent": 1
+  },
+  {
+    "name": "리멘",
+    "areaKey": 11,
+    "continent": 1
+  },
+  {
+    "name": "세르니움(전)",
+    "areaKey": 12,
+    "continent": 2
+  },
+  {
+    "name": "세르니움(후)",
+    "areaKey": 13,
+    "continent": 2
+  },
+  {
+    "name": "호텔 아르크스",
+    "areaKey": 14,
+    "continent": 2
+  },
+  {
+    "name": "오디움",
+    "areaKey": 15,
+    "continent": 2
+  },
+  {
+    "name": "도원경",
+    "areaKey": 16,
+    "continent": 2
+  },
+  {
+    "name": "아르테리아",
+    "areaKey": 17,
+    "continent": 2
+  },
+  {
+    "name": "카르시온",
+    "areaKey": 18,
+    "continent": 2
+  }
+]

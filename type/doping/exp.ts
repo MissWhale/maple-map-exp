@@ -1,0 +1,26 @@
+export type Exp = {
+  merecedes: number;
+  zero: number;
+  unionExpOcc: number;
+  unionArtifact: number;
+  drug: number;
+  hyper: number;
+  expCoupon: number;
+  expPlusCoupon: number;
+  vipBuff: number;
+  exteramGold: number;
+  expAccElixir: number;
+  solJanus: number;
+  holySymbol: number;
+  roadedDice: number;
+  showdown: number;
+  pendant: number;
+  clanRing: number;
+  expBoostRing: number;
+  characterTitle: number;
+  burning: number;
+  rune: number;
+  pcRoomExp: number;
+  server: number;
+  etc: number;
+};

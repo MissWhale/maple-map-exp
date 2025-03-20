@@ -1,0 +1,29 @@
+div.doping-table {
+  table {
+    th,
+    td {
+      padding: 12px;
+      text-align: start;
+      span {
+        display: inline-block;
+        width: calc(100% - 24px);
+        white-space: normal;
+        word-break: break-word;
+      }
+    }
+    tr {
+      border-bottom: 1px solid
+        rgba(var(--v-border-color), var(--v-border-opacity));
+      td.doping-input-label {
+        min-width: 100px;
+      }
+      td.doping-input {
+        min-width: 150px;
+      }
+      td.doping-input-value {
+        min-width: 80px;
+        font-weight: 500;
+      }
+    }
+  }
+}

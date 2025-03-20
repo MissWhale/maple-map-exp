@@ -1,0 +1,117 @@
+[
+  {
+    "id": 1,
+    "name": "자쿰",
+    "rewardByDifficulty": [0, 0, 0, 898e4, 0]
+  },
+  {
+    "id": 2,
+    "name": "매그너스",
+    "rewardByDifficulty": [0, 0, 1070e4, 0, 0]
+  },
+  {
+    "id": 3,
+    "name": "힐라",
+    "rewardByDifficulty": [0, 0, 639e4, 0, 0]
+  },
+  {
+    "id": 4,
+    "name": "파풀라투스",
+    "rewardByDifficulty": [0, 0, 2470e4, 0, 0]
+  },
+  {
+    "id": 5,
+    "name": "피에르",
+    "rewardByDifficulty": [0, 0, 908e4, 0, 0]
+  },
+  {
+    "id": 6,
+    "name": "반반",
+    "rewardByDifficulty": [0, 0, 9060e4, 0, 0]
+  },
+  {
+    "id": 7,
+    "name": "블러드퀸",
+    "rewardByDifficulty": [0, 0, 904e4, 0, 0]
+  },
+  {
+    "id": 8,
+    "name": "벨룸",
+    "rewardByDifficulty": [0, 0, 1160e4, 0, 0]
+  },
+  {
+    "id": 9,
+    "name": "핑크빈",
+    "rewardByDifficulty": [0, 0, 731e4, 0, 0]
+  },
+  {
+    "id": 10,
+    "name": "시그너스",
+    "rewardByDifficulty": [506e4, 833e4, 0, 0, 0]
+  },
+  {
+    "id": 11,
+    "name": "스우",
+    "rewardByDifficulty": [0, 314e5, 119e6, 0, 392e6]
+  },
+  {
+    "id": 12,
+    "name": "데미안",
+    "rewardByDifficulty": [0, 329e5, 113e6, 0, 0]
+  },
+  {
+    "id": 13,
+    "name": "가엔슬",
+    "rewardByDifficulty": [0, 478e5, 0, 161e6, 0]
+  },
+  {
+    "id": 14,
+    "name": "루시드",
+    "rewardByDifficulty": [49e6, 586e5, 135e6, 0, 0]
+  },
+  {
+    "id": 15,
+    "name": "윌",
+    "rewardByDifficulty": [531e5, 676e5, 165e6, 0, 0]
+  },
+  {
+    "id": 16,
+    "name": "더스크",
+    "rewardByDifficulty": [0, 724e5, 0, 15e7, 0]
+  },
+  {
+    "id": 17,
+    "name": "진힐라",
+    "rewardByDifficulty": [0, 153e5, 2e8, 0, 0]
+  },
+  {
+    "id": 18,
+    "name": "듄켈",
+    "rewardByDifficulty": [0, 781e5, 177e6, 0, 0]
+  },
+  {
+    "id": 19,
+    "name": "세렌",
+    "rewardByDifficulty": [0, 227e6, 314e6, 0, 134e7]
+  },
+  {
+    "id": 20,
+    "name": "칼로스",
+    "rewardByDifficulty": [265e6, 364e6, 0, 746e6, 15e8]
+  },
+  {
+    "id": 21,
+    "name": "카링",
+    "rewardByDifficulty": [293e6, 425e6, 87e7, 0, 175e7]
+  },
+  {
+    "id": 22,
+    "name": "림보",
+    "rewardByDifficulty": [0, 6e8, 107e7, 0, 0]
+  },
+  {
+    "id": 23,
+    "name": "발드릭스",
+    "rewardByDifficulty": [0, 8e8, 12e8, 0, 0]
+  }
+]
