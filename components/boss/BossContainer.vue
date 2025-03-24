@@ -22,7 +22,7 @@ const selectBoss = computed(() => {
       checkedIndex: findInfo?.difficulty ?? null,
       member: findInfo?.member ?? 1,
       price:
-        findInfo && findInfo.difficulty
+        findInfo && findInfo.difficulty !== null
           ? transformKoreanBossReward(
               Math.floor(
                 boss.rewardByDifficulty[findInfo.difficulty] / findInfo.member,

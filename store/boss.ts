@@ -34,7 +34,7 @@ export const useBossStore = defineStore(
             const bossInfo = bossMap.get(boss.id);
             return (
               acc +
-              (bossInfo && boss.difficulty
+              (bossInfo && boss.difficulty !== null
                 ? Math.floor(
                     bossInfo.rewardByDifficulty[boss.difficulty] / boss.member,
                   )
@@ -114,11 +114,13 @@ export const useBossStore = defineStore(
         alert('이미 존재하는 캐릭터입니다.');
         return;
       }
+      const id = nanoid();
       characterList.value.push({
         ...character,
-        id: nanoid(),
+        id,
         boss: [],
       });
+      selectCharacter.value = id;
     }
     function deleteCharacter(id: string) {
       characterList.value = characterList.value.filter(
