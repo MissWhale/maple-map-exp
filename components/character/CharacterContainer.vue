@@ -118,6 +118,19 @@ section.character-container {
         overflow: hidden;
         border: 1px solid #e0e0e0;
       }
+      div.character-info {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        div.character-name {
+          font-size: 14px;
+          font-weight: 500;
+        }
+        div.character-class,
+        div.character-level {
+          font-size: 12px;
+        }
+      }
       &.flip-list-move {
         transition: transform 0.2s;
       }

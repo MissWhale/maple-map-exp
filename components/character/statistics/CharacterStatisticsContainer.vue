@@ -76,6 +76,9 @@ section.character-statistics-container {
     display: flex;
     flex-direction: column;
     gap: 8px;
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid $secondary;
     li {
       display: flex;
       flex-direction: row;
@@ -103,7 +106,7 @@ section.character-statistics-container {
         border-top: 1px solid $secondary;
         padding-top: 8px;
         span {
-          font-weight: 600;
+          font-weight: 700;
         }
       }
     }

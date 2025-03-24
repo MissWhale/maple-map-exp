@@ -40,6 +40,7 @@ main {
   flex-direction: row;
   gap: 16px;
   padding: 16px;
+  flex-wrap: wrap;
   // display: flex;
   // flex-direction: row;
   // flex-wrap: wrap;
