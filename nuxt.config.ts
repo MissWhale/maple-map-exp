@@ -1,6 +1,12 @@
 import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify';
+import './env';
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  runtimeConfig: {
+    public: {
+      nexeonApiKey: process.env.NUXT_PUBLIC_NEXEON_API_KEY,
+    },
+  },
   app: {
     head: {
       link: [
