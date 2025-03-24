@@ -24,11 +24,11 @@ interface CharacterInfoAPiResponse {
   access_flag: string;
   liberation_quest_clear_flag: string;
 }
-const NXOPEN_API_KEY =
-  'test_be880df52cf9dd1cf55ebca9bc746a2c4094e5cd7500c817b174d5e0f94b16aaefe8d04e6d233bd35cf2fabdeb93fb0d';
 export const getCharacterOCIDAPi = async (
   search: string,
 ): Promise<CharacterOCIDAPiResponse> => {
+  const NXOPEN_API_KEY = useRuntimeConfig().public.nexeonApiKey;
+
   try {
     const response = await $fetch<CharacterOCIDAPiResponse>(
       'https://open.api.nexon.com/maplestory/v1/id',
@@ -51,6 +51,8 @@ export const getCharacterOCIDAPi = async (
 };
 
 export const getCharacterDefaultInfoAPi = async (ocid: string) => {
+  const NXOPEN_API_KEY = useRuntimeConfig().public.nexeonApiKey;
+
   try {
     const response = await $fetch<CharacterInfoAPiResponse>(
       'https://open.api.nexon.com/maplestory/v1/character/basic',
