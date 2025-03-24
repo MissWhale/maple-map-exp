@@ -55,7 +55,7 @@ export const useBossStore = defineStore(
           const bossInfo = bossMap.get(boss.id);
           return (
             acc +
-            (bossInfo && boss.difficulty
+            (bossInfo && boss.difficulty !== null
               ? Math.floor(
                   bossInfo.rewardByDifficulty[boss.difficulty] / boss.member,
                 )
@@ -77,7 +77,7 @@ export const useBossStore = defineStore(
           const bossInfo = bossMap.get(boss.id);
           return (
             acc +
-            (bossInfo && boss.difficulty
+            (bossInfo && boss.difficulty !== null
               ? Math.floor(
                   bossInfo.rewardByDifficulty[boss.difficulty] / boss.member,
                 )

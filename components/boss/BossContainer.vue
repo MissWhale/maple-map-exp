@@ -21,6 +21,10 @@ const selectBoss = computed(() => {
       ...boss,
       checkedIndex: findInfo?.difficulty ?? null,
       member: findInfo?.member ?? 1,
+      originalPrice:
+        findInfo && findInfo.difficulty !== null
+          ? boss.rewardByDifficulty[findInfo.difficulty] / findInfo.member
+          : 0,
       price:
         findInfo && findInfo.difficulty !== null
           ? transformKoreanBossReward(
@@ -31,6 +35,15 @@ const selectBoss = computed(() => {
           : null,
     };
   });
+});
+const totalPrice = computed(() => {
+  return transformKoreanBossReward(
+    Math.floor(
+      selectBoss.value.reduce((acc, boss) => {
+        return acc + (boss.originalPrice ?? 0);
+      }, 0),
+    ),
+  );
 });
 
 function handleChange(bossId: number, difficulty: BossDifficultyNumber | null) {
@@ -62,6 +75,9 @@ function handleMemberChange(bossId: number, member: number) {
         />
         <span class="boss-price">{{ boss.price }}</span>
       </li>
+      <li class="boss-total-price">
+        <span class="boss-total-price-value">{{ totalPrice }}</span>
+      </li>
     </ul>
     <div v-else class="boss-container-empty">
       <p>캐릭터를 선택해주세요.</p>
@@ -91,6 +107,19 @@ section.boss-container {
         font-size: 14px;
         font-weight: 500;
         text-align: right;
+      }
+    }
+    li.boss-total-price {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 4px;
+      border-top: 1px solid #e0e0e0;
+      padding-top: 8px;
+      margin-top: 8px;
+      span.boss-total-price-value {
+        font-size: 16px;
+        font-weight: 600;
       }
     }
   }
