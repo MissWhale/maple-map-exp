@@ -4,15 +4,14 @@ import type { CharacterBoss } from '~/store';
 const props = defineProps<{
   bossList: CharacterBoss[];
 }>();
+const bossList = computed(() => {
+  return props.bossList.sort((a, b) => a.id - b.id);
+});
 </script>
 
 <template>
   <ul class="character-boss-list">
-    <li
-      v-for="boss in props.bossList"
-      :key="boss.id"
-      class="character-boss-item"
-    >
+    <li v-for="boss in bossList" :key="boss.id" class="character-boss-item">
       <BossImage :id="boss.id" :difficulty="boss.difficulty" is-difficulty />
       <span class="boss-item-name">{{ boss.name }}</span>
     </li>
