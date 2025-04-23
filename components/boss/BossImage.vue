@@ -2,7 +2,7 @@
 const props = defineProps<{
   id: number;
   isDifficulty?: boolean;
-  difficulty?: number;
+  difficulty: BossDifficultyNumber | null;
 }>();
 
 const imagePosition = computed(() => {
@@ -34,7 +34,11 @@ const difficultyClass = computed(() => {
       :class="isDifficulty ? difficultyClass : ''"
       :style="{ backgroundPosition: imagePosition }"
     ></div>
-    <BossDifficultyName v-if="isDifficulty" :difficulty="difficulty" is-short />
+    <BossDifficultyName
+      v-if="isDifficulty"
+      :difficulty="difficulty!"
+      is-short
+    />
   </div>
 </template>
 
