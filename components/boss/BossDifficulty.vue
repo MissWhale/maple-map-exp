@@ -37,7 +37,9 @@ function handleChange(difficulty: number) {
         hide-details
         readonly
       />
-      <BossDifficultyName :difficulty="difficulty.difficulty" />
+      <BossDifficultyName
+        :difficulty="difficulty.difficulty as BossDifficultyNumber"
+      />
     </li>
   </ul>
 </template>

@@ -7,7 +7,9 @@ export interface Character {
   name: string;
   world: string;
   isCleared: boolean;
+  ocid: string | null;
 }
+export interface UpdateCharacter extends Omit<Character, 'isCleared' | 'id'> {}
 export interface NewCharacter extends Omit<Character, 'id'> {}
 export interface CharacterBoss {
   id: number;
@@ -174,6 +176,19 @@ export const useBossStore = defineStore(
         character.isCleared = !character.isCleared;
       }
     }
+    function updateCharacterList(list: UpdateCharacter[]) {
+      characterList.value = characterList.value.map((character) => {
+        const findCharacter = list.find((c) => c.name === character.name);
+        if (findCharacter) {
+          return {
+            ...character,
+            ...findCharacter,
+          };
+        } else {
+          return character;
+        }
+      });
+    }
     onMounted(() => {
       selectCharacter.value = null;
     });
@@ -193,6 +208,7 @@ export const useBossStore = defineStore(
       totalBossLength,
       bossClearedCount,
       changeAllCharacterCleared,
+      updateCharacterList,
     };
   },
   {

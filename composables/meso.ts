@@ -5,8 +5,9 @@ import type { CalculatorInput } from '~/type/doping/caculator-input';
 export const MesoRates = mesoRates;
 export const defaultMeso = (monsterLevel: number) => {
   return {
-    min: monsterLevel * 0.6,
-    max: monsterLevel * 0.9,
+    min: monsterLevel * 0.6 * 10,
+    max: monsterLevel * 0.9 * 10,
+    avg: monsterLevel * 0.75 * 10,
   };
 };
 
@@ -14,8 +15,9 @@ export const mesoCalculate = (monsterLevel: number, characterLevel: number) => {
   const levelDifference = characterLevel - monsterLevel;
   const rate = findMesoRate(levelDifference);
   return {
-    min: Math.round(monsterLevel * 0.6 * (rate / 100)),
-    max: Math.round(monsterLevel * 0.9 * (rate / 100)),
+    min: Math.round(monsterLevel * 0.6 * (rate / 100) * 10),
+    max: Math.round(monsterLevel * 0.9 * (rate / 100) * 10),
+    rate: rate,
   };
 };
 

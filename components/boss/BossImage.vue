@@ -2,7 +2,7 @@
 const props = defineProps<{
   id: number;
   isDifficulty?: boolean;
-  difficulty: BossDifficultyNumber | null;
+  difficulty?: BossDifficultyNumber | null;
 }>();
 
 const imagePosition = computed(() => {

@@ -19,12 +19,19 @@ const totalInfo = computed(() => [
     count: bossStore.totalBossLength,
   },
 ]);
+const checkedCount = computed(() => {
+  return bossStore.totalCharacterList.filter((character) => character.cleared)
+    .length;
+});
 </script>
 
 <template>
   <section class="character-statistics-container card-container">
     <CommonCardHeader title="클리어 현황">
       <template #action>
+        <span class="character-statistics-checked-count">
+          {{ checkedCount }} / {{ bossStore.totalCharacterList.length }}
+        </span>
         <VBtn
           color="primary"
           size="small"
@@ -43,6 +50,7 @@ const totalInfo = computed(() => [
         </VBtn>
       </template>
     </CommonCardHeader>
+
     <ul class="character-statistics-list">
       <CharacterStatistics
         v-for="character in bossStore.totalCharacterList"
@@ -71,7 +79,16 @@ const totalInfo = computed(() => [
 
 <style scoped lang="scss">
 section.character-statistics-container {
-  width: 300px;
+  width: 320px;
+  span.character-statistics-checked-count {
+    font-size: 12px;
+    font-weight: 400;
+    color: $secondary;
+    background: $secondary;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
   ul.character-statistics-total {
     display: flex;
     flex-direction: column;
