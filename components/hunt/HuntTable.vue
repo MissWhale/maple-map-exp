@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { useHuntStore } from '~/store/hunt';
-const emit = defineEmits(['addClick']);
+const emit = defineEmits<{
+  (event: 'addClick'): void;
+  (event: 'detailInfoClick', id: number): void;
+}>();
 const HEADERS = [
   { text: '맵', value: 'map' },
   { text: '경험치', value: 'exp' },
@@ -9,6 +12,9 @@ const HEADERS = [
 const huntStore = useHuntStore();
 function addClick() {
   emit('addClick');
+}
+function detailInfoClick(id: number) {
+  emit('detailInfoClick', id);
 }
 </script>
 
@@ -31,6 +37,7 @@ function addClick() {
           v-for="hunt in huntStore.huntList"
           :key="hunt.id"
           :info="hunt"
+          @detailInfoClick="detailInfoClick"
         />
         <tr>
           <td colspan="3">

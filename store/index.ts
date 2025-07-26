@@ -4,3 +4,4 @@ export * from './level';
 export * from './monster-park';
 export * from './quest';
 export * from './exp-coupon';
+export * from './hunt';
