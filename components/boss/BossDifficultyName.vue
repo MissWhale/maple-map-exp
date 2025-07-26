@@ -37,7 +37,7 @@ div.boss-difficulty-name {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 4px 12px;
+  padding: 3px 12px 4px;
   border-radius: 22px;
   span {
     text-transform: uppercase;
@@ -45,7 +45,7 @@ div.boss-difficulty-name {
     font-weight: 600;
   }
   &.short {
-    padding: 4px 6px;
+    padding: 3px 6px 4px;
     border-radius: 6px;
   }
   &.easy {

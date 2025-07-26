@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useBossStore } from '~/store';
+import { useBossStore, type UpdateCharacter } from '~/store';
 
 const bossStore = useBossStore();
 const search = ref<string | null>(null);
@@ -17,6 +17,7 @@ async function handleSearch() {
       level: characterInfo.character_level,
       world: characterInfo.world_name,
       isCleared: false,
+      ocid: ocid.ocid,
     });
     search.value = null;
   } catch (error) {
@@ -34,11 +35,50 @@ async function handleSearch() {
     searchLoading.value = false;
   }
 }
+async function handleRefresh() {
+  searchLoading.value = true;
+  try {
+    const list: UpdateCharacter[] = [];
+    for (const character of bossStore.characterList) {
+      // ocid가 없으면 API로 가져옴
+      const ocid =
+        character.ocid ?? (await getCharacterOCIDAPi(character.name)).ocid;
+      // ocid로 캐릭터 정보 조회
+      const characterInfo = await getCharacterDefaultInfoAPi(ocid);
+      // 결과 배열에 추가
+      list.push({
+        name: characterInfo.character_name,
+        class: characterInfo.character_class,
+        image: characterInfo.character_image,
+        level: characterInfo.character_level,
+        world: characterInfo.world_name,
+      } as UpdateCharacter);
+      // 0.5초 대기
+      await new Promise((resolve) => setTimeout(resolve, 500));
+    }
+    bossStore.updateCharacterList(list);
+  } catch (error) {
+    console.error(error);
+    alert('오류가 발생했습니다.');
+  } finally {
+    searchLoading.value = false;
+  }
+}
 </script>
 
 <template>
   <section class="character-container card-container">
-    <CommonCardHeader title="캐릭터 선택" />
+    <CommonCardHeader title="캐릭터 선택">
+      <template #action>
+        <VBtn
+          color="success"
+          size="small"
+          height="18.3px"
+          @click="handleRefresh"
+          >새로고침</VBtn
+        >
+      </template>
+    </CommonCardHeader>
     <div class="character-search">
       <VTextField
         v-model="search"

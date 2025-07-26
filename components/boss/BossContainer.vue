@@ -65,7 +65,7 @@ function handleMemberChange(bossId: number, member: number) {
         <BossDifficulty
           :reward-by-difficulty="boss.rewardByDifficulty"
           :checked-index="boss.checkedIndex"
-          @change="handleChange(boss.id, $event)"
+          @change="handleChange(boss.id, $event as BossDifficultyNumber)"
         />
         <BossMember
           :member="boss.member"
@@ -94,7 +94,7 @@ section.boss-container {
     gap: 6px;
     li.boss-item {
       display: grid;
-      grid-template-columns: 25px 70px 1fr 75px 110px;
+      grid-template-columns: 25px 70px 1fr 60px 110px;
       gap: 8px;
       justify-content: flex-start;
       align-items: center;
