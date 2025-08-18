@@ -27,12 +27,14 @@ const list = ref(Array.from({ length: 6 }, (_, i) => i + 1));
 <style lang="scss">
 div.boss-member {
   div.v-input {
-    height: 24px;
+    height: 32px;
     div.v-field {
-      padding-right: 2px;
+      padding-right: 4px;
       div.v-field__input {
-        padding: 4px 6px 4px 12px;
-        min-height: 24px;
+        padding: 6px 8px 6px 12px;
+        min-height: 32px;
+        font-size: 14px;
+        font-weight: 500;
       }
     }
   }

@@ -57,15 +57,29 @@ ul.boss-difficulty {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  gap: 6px;
+  gap: 8px;
+
   li.boss-difficulty-item {
-    width: 110px;
+    min-width: 90px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     cursor: pointer;
+    padding: 6px 8px;
+    border-radius: 6px;
+    background: #f8f9fa;
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
+
+    &.selected {
+      background: rgba(103, 126, 234, 0.1);
+      border-color: #667eea;
+    }
+
     span {
       text-transform: capitalize;
+      font-size: 13px;
+      font-weight: 500;
     }
   }
 }

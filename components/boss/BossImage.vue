@@ -47,37 +47,45 @@ div.boss-image-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
+  gap: 4px;
+
   div.boss-item-image {
-    border-radius: 4px;
+    border-radius: 6px;
     background: url('@/assets/img/boss.png');
-    width: 25px;
-    height: 25px;
+    width: 28px;
+    height: 28px;
     object-fit: contain;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
     &.easy {
-      width: 27px;
-      height: 27px;
+      width: 30px;
+      height: 30px;
       border: 2px solid #bbbbbb;
+      border-radius: 8px;
     }
     &.normal {
-      width: 27px;
-      height: 27px;
+      width: 30px;
+      height: 30px;
       border: 2px solid #44bbcc;
+      border-radius: 8px;
     }
     &.hard {
-      width: 27px;
-      height: 27px;
+      width: 30px;
+      height: 30px;
       border: 2px solid #cc5588;
+      border-radius: 8px;
     }
     &.chaos {
-      width: 27px;
-      height: 27px;
+      width: 30px;
+      height: 30px;
       border: 2px solid #ffe1be;
+      border-radius: 8px;
     }
     &.extreme {
-      width: 27px;
-      height: 27px;
+      width: 30px;
+      height: 30px;
       border: 2px solid #ee3355;
+      border-radius: 8px;
     }
   }
 }

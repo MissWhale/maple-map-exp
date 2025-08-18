@@ -21,7 +21,7 @@ div.common-card-header {
   align-items: center;
   padding: 8px 0;
   p {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 600;
   }
   div.common-card-header-action {
