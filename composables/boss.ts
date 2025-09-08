@@ -19,6 +19,7 @@ export const BossReward = {
 export const bossList = boss.map((boss, index) => ({
   id: boss.id,
   name: boss.name,
+  orders: boss.orders,
   rewardByDifficulty: boss.rewardByDifficulty,
   imagePosition: `-${index * 25}px 0px`,
 }));
