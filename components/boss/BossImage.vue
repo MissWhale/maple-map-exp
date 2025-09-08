@@ -51,7 +51,7 @@ div.boss-image-container {
 
   div.boss-item-image {
     border-radius: 6px;
-    background: url('@/assets/img/boss.png');
+    background: url('@/assets/img/boss250908.png');
     width: 28px;
     height: 28px;
     object-fit: contain;

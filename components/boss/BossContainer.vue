@@ -15,7 +15,7 @@ const characterBoss = computed(() => {
 });
 
 const selectBoss = computed(() => {
-  return bossList.map((boss) => {
+  return bossList.sort((a, b) => a.orders - b.orders).map((boss) => {
     const findInfo = characterBoss.value.find((b) => b.id === boss.id);
     return {
       ...boss,

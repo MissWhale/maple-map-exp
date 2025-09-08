@@ -4,6 +4,8 @@ import { useBossStore, type UpdateCharacter } from '~/store';
 const bossStore = useBossStore();
 const search = ref<string | null>(null);
 const searchLoading = ref(false);
+const syncLoading = ref(false);
+const syncDialog = ref(false);
 async function handleSearch() {
   if (!search.value) return;
   searchLoading.value = true;
@@ -36,7 +38,8 @@ async function handleSearch() {
   }
 }
 async function handleRefresh() {
-  searchLoading.value = true;
+  syncLoading.value = true;
+  syncDialog.value = true;
   try {
     const list: UpdateCharacter[] = [];
     for (const character of bossStore.characterList) {
@@ -61,7 +64,11 @@ async function handleRefresh() {
     console.error(error);
     alert('오류가 발생했습니다.');
   } finally {
-    searchLoading.value = false;
+    syncLoading.value = false;
+    // 동기화 완료 후 1초 뒤에 다이얼로그 닫기
+    setTimeout(() => {
+      syncDialog.value = false;
+    }, 1000);
   }
 }
 </script>
@@ -77,9 +84,9 @@ async function handleRefresh() {
         color="success"
         prepend-icon="mdi-refresh"
         @click="handleRefresh"
-        :loading="searchLoading"
+        :disabled="syncLoading"
       >
-        전체 새로고침
+        정보 동기화
       </VBtn>
     </div>
 
@@ -135,6 +142,31 @@ async function handleRefresh() {
         </draggable>
       </client-only>
     </div>
+
+    <!-- 동기화 로딩 오버레이 -->
+    <VDialog
+      v-model="syncDialog"
+      persistent
+      max-width="400"
+      class="sync-dialog"
+    >
+      <VCard class="sync-card">
+        <VCardText class="text-center pa-8">
+          <VProgressCircular
+            indeterminate
+            color="success"
+            size="64"
+            width="6"
+            class="mb-4"
+          />
+          <h3 class="text-h6 mb-2">정보 동기화 중...</h3>
+          <p class="text-body-2 text-medium-emphasis">
+            캐릭터 정보를 업데이트하고 있습니다.<br>
+            잠시만 기다려주세요.
+          </p>
+        </VCardText>
+      </VCard>
+    </VDialog>
   </section>
 </template>
 
@@ -211,6 +243,16 @@ async function handleRefresh() {
             height: 100%;
             overflow: hidden;
             border-radius: 50%;
+            
+            :deep(img) {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              object-position: center;
+              transform: scale(3);
+              margin-top: -10px;
+              // margin-left: -5px;
+            }
           }
 
           .character-level {
@@ -248,6 +290,18 @@ async function handleRefresh() {
         }
       }
     }
+  }
+
+  // 동기화 다이얼로그 스타일
+  :deep(.sync-dialog) {
+    .v-overlay__content {
+      border-radius: 16px;
+    }
+  }
+
+  .sync-card {
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
   }
 }
 </style>
