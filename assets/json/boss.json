@@ -128,13 +128,13 @@
   },
   {
     "id": 22,
-    "orders": 23,
+    "orders": 24,
     "name": "림보",
     "rewardByDifficulty": [0, 108e7, 251e7, 0, 0]
   },
   {
     "id": 23,
-    "orders": 24,
+    "orders": 25,
     "name": "발드릭스",
     "rewardByDifficulty": [0, 144e7, 324e7, 0, 0]
   },
@@ -143,5 +143,17 @@
     "orders": 21,
     "name": "대적자",
     "rewardByDifficulty": [324e6, 589e6, 151e7, 0, 496e7]
+  },
+  {
+    "id": 25,
+    "orders": 23,
+    "name": "흉성",
+    "rewardByDifficulty": [0, 658e6, 2819e6, 0, 0]
+  },
+  {
+    "id": 26,
+    "orders": 26,
+    "name": "유피테르",
+    "rewardByDifficulty": [0, 17e8, 51e8, 0, 0]
   }
 ]

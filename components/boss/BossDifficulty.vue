@@ -2,6 +2,7 @@
 const props = defineProps<{
   rewardByDifficulty: number[];
   checkedIndex: number | null;
+  disabled?: boolean;
 }>();
 
 const emit = defineEmits<{
@@ -19,6 +20,7 @@ const difficultyList = computed(() => {
 });
 
 function handleChange(difficulty: number) {
+  if (props.disabled) return;
   emit('change', difficulty);
 }
 </script>
@@ -30,6 +32,7 @@ function handleChange(difficulty: number) {
       v-for="difficulty in difficultyList"
       :key="difficulty.difficulty"
       @click="handleChange(difficulty.difficulty)"
+      :class="{ disabled: props.disabled }"
     >
       <VCheckbox
         :model-value="difficulty.checked"
@@ -58,7 +61,6 @@ ul.boss-difficulty {
   flex-direction: row;
   justify-content: flex-start;
   gap: 8px;
-
   li.boss-difficulty-item {
     min-width: 90px;
     display: flex;
@@ -74,6 +76,10 @@ ul.boss-difficulty {
     &.selected {
       background: rgba(103, 126, 234, 0.1);
       border-color: #667eea;
+    }
+
+    &.disabled {
+      cursor: not-allowed;
     }
 
     span {

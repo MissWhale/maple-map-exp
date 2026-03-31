@@ -7,12 +7,13 @@ const activeTab = ref(0);
 const tabs = [
   { title: '캐릭터 관리', icon: 'mdi-account-group' },
   { title: '보스 설정', icon: 'mdi-sword-cross' },
-  { title: '클리어 현황', icon: 'mdi-chart-line' },
 ];
 
 // 전체 통계 정보
 const totalStats = computed(() => ({
   totalCharacters: bossStore.totalCharacterList.length,
+  totalBossLength: bossStore.totalBossLength,
+  totalClearedCount: bossStore.bossClearedCount,
   clearedCharacters: bossStore.totalCharacterList.filter((c) => c.cleared)
     .length,
   totalPrice: transformKoreanBossReward(bossStore.totalPrice),
@@ -49,7 +50,15 @@ watch(
             >
           </div>
           <div class="stat-item">
-            <span class="stat-label">총 클리어</span>
+            <span class="stat-label">보스</span>
+            <span class="stat-value"
+              >{{ totalStats.totalClearedCount }}/{{
+                totalStats.totalBossLength
+              }}</span
+            >
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">클리어 가격</span>
             <span class="stat-value">{{ totalStats.clearedPrice }}</span>
           </div>
           <div class="stat-item">
@@ -100,17 +109,15 @@ watch(
               </div>
             </div>
           </div>
-
-          <!-- 클리어 현황 탭 -->
-          <div v-else-if="activeTab === 2" key="statistics" class="tab-panel">
-            <div class="panel-grid">
-              <div class="panel-card statistics-panel">
-                <CharacterStatisticsContainer />
-              </div>
-            </div>
-          </div>
         </Transition>
       </div>
+
+      <!-- 오른쪽 고정 클리어 현황 패널 -->
+      <aside class="clear-status-fixed-panel">
+        <div class="panel-card statistics-panel">
+          <CharacterStatisticsContainer />
+        </div>
+      </aside>
     </main>
   </VApp>
 </template>
@@ -233,6 +240,7 @@ watch(
 
 .tab-content {
   padding: 32px;
+  padding-right: 470px;
   min-height: calc(100vh - 200px);
   background: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(5px);
@@ -263,6 +271,24 @@ watch(
       transform: translateY(-2px);
       box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
     }
+  }
+}
+
+.clear-status-fixed-panel {
+  position: fixed;
+  top: 190px;
+  right: 32px;
+  width: 400px;
+  max-height: calc(100vh - 220px);
+  overflow: auto;
+  z-index: 30;
+
+  .panel-card {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
   }
 }
 
@@ -301,6 +327,14 @@ watch(
 
   .tab-content {
     padding: 20px;
+    padding-right: 20px;
+  }
+
+  .clear-status-fixed-panel {
+    position: static;
+    width: auto;
+    max-height: none;
+    margin: 0 20px 20px;
   }
 }
 
@@ -310,33 +344,33 @@ watch(
     gap: 8px;
     align-items: flex-start;
   }
+
+  .clear-status-fixed-panel {
+    margin: 0 16px 16px;
+  }
 }
 
 /* 탭 전환 애니메이션 */
 .tab-slide-enter-active {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  position: absolute;
-  width: 100%;
-  left: 0;
-  top: 32px;
+  transition:
+    opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .tab-slide-leave-active {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  position: absolute;
-  width: 100%;
-  left: 0;
-  top: 32px;
+  transition:
+    opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .tab-slide-enter-from {
   opacity: 0;
-  transform: translateX(50px);
+  transform: translateX(40px);
 }
 
 .tab-slide-leave-to {
   opacity: 0;
-  transform: translateX(-50px);
+  transform: translateX(-40px);
 }
 
 .tab-slide-enter-to,

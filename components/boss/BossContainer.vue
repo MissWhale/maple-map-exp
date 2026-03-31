@@ -15,26 +15,29 @@ const characterBoss = computed(() => {
 });
 
 const selectBoss = computed(() => {
-  return bossList.sort((a, b) => a.orders - b.orders).map((boss) => {
-    const findInfo = characterBoss.value.find((b) => b.id === boss.id);
-    return {
-      ...boss,
-      checkedIndex: findInfo?.difficulty ?? null,
-      member: findInfo?.member ?? 1,
-      originalPrice:
-        findInfo && findInfo.difficulty !== null
-          ? boss.rewardByDifficulty[findInfo.difficulty] / findInfo.member
-          : 0,
-      price:
-        findInfo && findInfo.difficulty !== null
-          ? transformKoreanBossReward(
-              Math.floor(
-                boss.rewardByDifficulty[findInfo.difficulty] / findInfo.member,
-              ),
-            )
-          : null,
-    };
-  });
+  return bossList
+    .sort((a, b) => a.orders - b.orders)
+    .map((boss) => {
+      const findInfo = characterBoss.value.find((b) => b.id === boss.id);
+      return {
+        ...boss,
+        checkedIndex: findInfo?.difficulty ?? null,
+        member: findInfo?.member ?? 1,
+        originalPrice:
+          findInfo && findInfo.difficulty !== null
+            ? boss.rewardByDifficulty[findInfo.difficulty] / findInfo.member
+            : 0,
+        price:
+          findInfo && findInfo.difficulty !== null
+            ? transformKoreanBossReward(
+                Math.floor(
+                  boss.rewardByDifficulty[findInfo.difficulty] /
+                    findInfo.member,
+                ),
+              )
+            : null,
+      };
+    });
 });
 const totalPrice = computed(() => {
   return transformKoreanBossReward(
@@ -54,6 +57,10 @@ const selectedCharacter = computed(() => {
 
 const selectedBossCount = computed(() => {
   return selectBoss.value.filter((boss) => boss.checkedIndex !== null).length;
+});
+
+const isMaxBossCount = computed(() => {
+  return selectedBossCount.value === 12 || bossStore.totalBossLength >= 90;
 });
 
 function handleChange(bossId: number, difficulty: BossDifficultyNumber | null) {
@@ -81,7 +88,10 @@ function handleMemberChange(bossId: number, member: number) {
     <ul v-if="bossStore.selectCharacter" class="boss-list">
       <li
         class="boss-item"
-        :class="{ 'has-selected-difficulty': boss.checkedIndex !== null }"
+        :class="{
+          'has-selected-difficulty': boss.checkedIndex !== null,
+          disabled: isMaxBossCount && boss.checkedIndex === null,
+        }"
         v-for="boss in selectBoss"
         :key="boss.id"
       >
@@ -90,6 +100,7 @@ function handleMemberChange(bossId: number, member: number) {
         <BossDifficulty
           :reward-by-difficulty="boss.rewardByDifficulty"
           :checked-index="boss.checkedIndex"
+          :disabled="isMaxBossCount && boss.checkedIndex === null"
           @change="handleChange(boss.id, $event as BossDifficultyNumber)"
         />
         <BossMember
@@ -135,7 +146,7 @@ section.boss-container {
       gap: 12px;
       justify-content: flex-start;
       align-items: center;
-      padding: 4px 16px;
+      padding: 1px 16px;
       border-radius: 8px;
       background: #f8f9fa;
       border: 1px solid transparent;
@@ -144,6 +155,11 @@ section.boss-container {
       &.selected {
         border-color: #667eea;
         background: rgba(103, 126, 234, 0.05);
+      }
+
+      &.disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
       }
 
       span.boss-item-name {
