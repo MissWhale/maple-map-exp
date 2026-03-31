@@ -1,19 +1,16 @@
-name: Deploy to NuxtHub
-on: push
+name: Deploy to Cloudflare Pages
+on:
+  push:
+    branches:
+      - main
+  pull_request:
 
 jobs:
   deploy:
-    name: 'Deploy to NuxtHub'
+    name: Deploy to Cloudflare Pages
     runs-on: ubuntu-latest
-    environment:
-      name: ${{ github.ref == 'refs/heads/main' && 'production' || 'preview' }}
-      url: ${{ steps.deploy.outputs.deployment-url }}
     permissions:
       contents: read
-      id-token: write
-    # defaults:
-    #   run:
-    #     working-directory: /
 
     steps:
       - name: Checkout
@@ -25,18 +22,16 @@ jobs:
           node-version: 20.x
 
       - name: Install dependencies
-        run: yarn install
-
-      # - name: Ensure NuxtHub module is installed
-      #   run: yarn nuxthub@latest ensure
+        run: yarn install --frozen-lockfile
 
       - name: Build application
         run: yarn build
 
-      - name: Deploy to NuxtHub
-        uses: nuxt-hub/action@v1
-        id: deploy
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/pages-action@v1
         with:
-          project-key: maple-map-exp-oe05
-          # directory: //dist
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: maple-map-exp
           directory: dist
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
