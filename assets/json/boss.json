@@ -12,16 +12,11 @@
     "rewardByDifficulty": [0, 0, 856e4, 0, 0]
   },
   {
-    "id": 3,
-    "orders": 3,
-    "name": "힐라",
-    "rewardByDifficulty": [0, 0, 575e4, 0, 0]
-  },
-  {
     "id": 4,
     "orders": 4,
     "name": "파풀라투스",
-    "rewardByDifficulty": [0, 0, 138e5, 0, 0]
+    "rewardByDifficulty": [0, 0, 138e5, 0, 0],
+    "rewardByDifficultyNew": [0, 0, 131e5, 0, 0]
   },
   {
     "id": 5,
@@ -48,112 +43,115 @@
     "rewardByDifficulty": [0, 0, 928e4, 0, 0]
   },
   {
-    "id": 9,
-    "orders": 9,
-    "name": "핑크빈",
-    "rewardByDifficulty": [0, 0, 658e4, 0, 0]
-  },
-  {
-    "id": 10,
-    "orders": 10,
-    "name": "시그너스",
-    "rewardByDifficulty": [455e4, 75e5, 0, 0, 0]
-  },
-  {
     "id": 11,
     "orders": 11,
     "name": "스우",
-    "rewardByDifficulty": [0, 176e5, 542e5, 0, 604e6]
+    "rewardByDifficulty": [0, 176e5, 542e5, 0, 604e6],
+    "rewardByDifficultyNew": [0, 167e5, 515e5, 0, 574e6]
   },
   {
     "id": 12,
     "orders": 12,
     "name": "데미안",
-    "rewardByDifficulty": [0, 184e5, 515e5, 0, 0]
+    "rewardByDifficulty": [0, 184e5, 515e5, 0, 0],
+    "rewardByDifficultyNew": [0, 175e5, 489e5, 0, 0]
   },
   {
     "id": 13,
     "orders": 13,
     "name": "가엔슬",
-    "rewardByDifficulty": [0, 268e5, 0, 791e5, 0]
+    "rewardByDifficulty": [0, 268e5, 0, 791e5, 0],
+    "rewardByDifficultyNew": [0, 255e5, 0, 751e5, 0]
   },
   {
     "id": 14,
     "orders": 14,
     "name": "루시드",
-    "rewardByDifficulty": [314e5, 375e5, 662e5, 0, 0]
+    "rewardByDifficulty": [314e5, 375e5, 662e5, 0, 0],
+    "rewardByDifficultyNew": [298e5, 356e5, 629e5, 0, 0]
   },
   {
     "id": 15,
     "orders": 15,
     "name": "윌",
-    "rewardByDifficulty": [34e6, 433e5, 812e5, 0, 0]
+    "rewardByDifficulty": [34e6, 433e5, 812e5, 0, 0],
+    "rewardByDifficultyNew": [323e5, 411e5, 771e5, 0, 0]
   },
   {
     "id": 16,
     "orders": 16,
     "name": "더스크",
-    "rewardByDifficulty": [0, 463e5, 0, 735e5, 0]
+    "rewardByDifficulty": [0, 463e5, 0, 735e5, 0],
+    "rewardByDifficultyNew": [0, 440e5, 0, 698e5, 0]
   },
   {
     "id": 17,
     "orders": 17,
     "name": "진힐라",
-    "rewardByDifficulty": [0, 749e5, 112e6, 0, 0]
+    "rewardByDifficulty": [0, 749e5, 112e6, 0, 0],
+    "rewardByDifficultyNew": [0, 712e5, 106e6, 0, 0]
   },
   {
     "id": 18,
     "orders": 18,
     "name": "듄켈",
-    "rewardByDifficulty": [0, 5e7, 994e5, 0, 0]
+    "rewardByDifficulty": [0, 5e7, 994e5, 0, 0],
+    "rewardByDifficultyNew": [0, 475e5, 944e5, 0, 0]
   },
   {
     "id": 19,
     "orders": 19,
     "name": "세렌",
-    "rewardByDifficulty": [0, 266e6, 396e6, 0, 315e7]
+    "rewardByDifficulty": [0, 266e6, 396e6, 0, 315e7],
+    "rewardByDifficultyNew": [0, 239e6, 356e6, 0, 2835e6]
   },
   {
     "id": 20,
     "orders": 20,
     "name": "칼로스",
-    "rewardByDifficulty": [311e6, 561e6, 0, 134e7, 432e7]
+    "rewardByDifficulty": [311e6, 561e6, 0, 134e7, 432e7],
+    "rewardByDifficultyNew": [280e6, 505e6, 0, 1273e6, 4104e6]
   },
-
   {
     "id": 21,
     "orders": 22,
     "name": "카링",
-    "rewardByDifficulty": [419e6, 714e6, 183e7, 0, 678e7]
+    "rewardByDifficulty": [419e6, 714e6, 183e7, 0, 678e7],
+    "rewardByDifficultyNew": [377e6, 678e6, 1739e6, 0, 5387e6]
   },
   {
     "id": 22,
     "orders": 24,
     "name": "림보",
-    "rewardByDifficulty": [0, 108e7, 251e7, 0, 0]
+    "rewardByDifficulty": [0, 108e7, 251e7, 0, 0],
+    "rewardByDifficultyNew": [0, 1026e6, 2385e6, 0, 0]
   },
   {
     "id": 23,
     "orders": 25,
     "name": "발드릭스",
-    "rewardByDifficulty": [0, 144e7, 324e7, 0, 0]
+    "rewardByDifficulty": [0, 144e7, 324e7, 0, 0],
+    "rewardByDifficultyNew": [0, 1368e6, 3078e6, 0, 0]
   },
   {
     "id": 24,
     "orders": 21,
     "name": "대적자",
-    "rewardByDifficulty": [324e6, 589e6, 151e7, 0, 496e7]
+    "rewardByDifficulty": [324e6, 589e6, 151e7, 0, 496e7],
+    "rewardByDifficultyNew": [308e6, 560e6, 1435e6, 0, 4712e6]
   },
   {
     "id": 25,
     "orders": 23,
     "name": "흉성",
-    "rewardByDifficulty": [0, 658e6, 2819e6, 0, 0]
+    "rewardByDifficulty": [0, 658e6, 2819e6, 0, 0],
+    "rewardByDifficultyNew": [0, 625e6, 2678e6, 0, 0]
   },
   {
     "id": 26,
     "orders": 26,
     "name": "유피테르",
-    "rewardByDifficulty": [0, 17e8, 51e8, 0, 0]
+    "rewardByDifficulty": [0, 17e8, 51e8, 0, 0],
+    "rewardByDifficultyNew": [0, 1615e6, 4845e6, 0, 0]
   }
 ]

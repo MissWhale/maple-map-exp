@@ -24,25 +24,29 @@ export const useBossStore = defineStore(
   () => {
     const characterList = ref<CharacterTotalInfo[]>([]);
     const selectCharacter = ref<string | null>(null);
+    const bossPriceNow = useBossPriceNow();
+
     const totalCharacterList = computed(() => {
+      const date = bossPriceNow.value;
       return characterList.value.map((character) => {
         const bossMap = new Map(bossList.map((boss) => [boss.id, boss]));
+        const bossEntries = character.boss.map((boss) => {
+          const bossInfo = bossMap.get(boss.id);
+          return {
+            rewardByDifficulty: bossInfo?.rewardByDifficulty ?? [],
+            rewardByDifficultyNew: bossInfo?.rewardByDifficultyNew,
+            difficulty: boss.difficulty,
+            member: boss.member,
+          };
+        });
+
         return {
           id: character.id,
           name: character.name,
           count: character.boss.length,
           cleared: character.isCleared,
-          price: character.boss.reduce((acc, boss) => {
-            const bossInfo = bossMap.get(boss.id);
-            return (
-              acc +
-              (bossInfo && boss.difficulty !== null
-                ? Math.floor(
-                    bossInfo.rewardByDifficulty[boss.difficulty] / boss.member,
-                  )
-                : 0)
-            );
-          }, 0),
+          price: sumBossRewardAmounts(bossEntries, date),
+          upcomingPrice: sumUpcomingBossRewardAmounts(bossEntries, date),
           updateCleared: () => {
             updateCharacterCleared(character.id);
           },
@@ -50,20 +54,21 @@ export const useBossStore = defineStore(
       });
     });
     const totalPrice = computed(() => {
+      const date = bossPriceNow.value;
       const bossMap = new Map(bossList.map((boss) => [boss.id, boss]));
-      return characterList.value
+      const bossEntries = characterList.value
         .flatMap((character) => character.boss)
-        .reduce((acc, boss) => {
+        .map((boss) => {
           const bossInfo = bossMap.get(boss.id);
-          return (
-            acc +
-            (bossInfo && boss.difficulty !== null
-              ? Math.floor(
-                  bossInfo.rewardByDifficulty[boss.difficulty] / boss.member,
-                )
-              : 0)
-          );
-        }, 0);
+          return {
+            rewardByDifficulty: bossInfo?.rewardByDifficulty ?? [],
+            rewardByDifficultyNew: bossInfo?.rewardByDifficultyNew,
+            difficulty: boss.difficulty,
+            member: boss.member,
+          };
+        });
+
+      return sumBossRewardAmounts(bossEntries, date);
     });
     const totalBossLength = computed(() => {
       return characterList.value.reduce((acc, character) => {
@@ -71,21 +76,22 @@ export const useBossStore = defineStore(
       }, 0);
     });
     const bossClearedPrice = computed(() => {
+      const date = bossPriceNow.value;
       const bossMap = new Map(bossList.map((boss) => [boss.id, boss]));
-      return characterList.value
+      const bossEntries = characterList.value
         .filter((character) => character.isCleared)
         .flatMap((character) => character.boss)
-        .reduce((acc, boss) => {
+        .map((boss) => {
           const bossInfo = bossMap.get(boss.id);
-          return (
-            acc +
-            (bossInfo && boss.difficulty !== null
-              ? Math.floor(
-                  bossInfo.rewardByDifficulty[boss.difficulty] / boss.member,
-                )
-              : 0)
-          );
-        }, 0);
+          return {
+            rewardByDifficulty: bossInfo?.rewardByDifficulty ?? [],
+            rewardByDifficultyNew: bossInfo?.rewardByDifficultyNew,
+            difficulty: boss.difficulty,
+            member: boss.member,
+          };
+        });
+
+      return sumBossRewardAmounts(bossEntries, date);
     });
     const bossClearedCount = computed(() => {
       return characterList.value
@@ -96,6 +102,51 @@ export const useBossStore = defineStore(
     });
     const notClearedPrice = computed(() => {
       return totalPrice.value - bossClearedPrice.value;
+    });
+    const upcomingTotalPrice = computed(() => {
+      const date = bossPriceNow.value;
+      const bossMap = new Map(bossList.map((boss) => [boss.id, boss]));
+      const bossEntries = characterList.value
+        .flatMap((character) => character.boss)
+        .map((boss) => {
+          const bossInfo = bossMap.get(boss.id);
+          return {
+            rewardByDifficulty: bossInfo?.rewardByDifficulty ?? [],
+            rewardByDifficultyNew: bossInfo?.rewardByDifficultyNew,
+            difficulty: boss.difficulty,
+            member: boss.member,
+          };
+        });
+
+      return sumUpcomingBossRewardAmounts(bossEntries, date);
+    });
+    const upcomingBossClearedPrice = computed(() => {
+      const date = bossPriceNow.value;
+      const bossMap = new Map(bossList.map((boss) => [boss.id, boss]));
+      const bossEntries = characterList.value
+        .filter((character) => character.isCleared)
+        .flatMap((character) => character.boss)
+        .map((boss) => {
+          const bossInfo = bossMap.get(boss.id);
+          return {
+            rewardByDifficulty: bossInfo?.rewardByDifficulty ?? [],
+            rewardByDifficultyNew: bossInfo?.rewardByDifficultyNew,
+            difficulty: boss.difficulty,
+            member: boss.member,
+          };
+        });
+
+      return sumUpcomingBossRewardAmounts(bossEntries, date);
+    });
+    const upcomingNotClearedPrice = computed(() => {
+      if (
+        upcomingTotalPrice.value === null ||
+        upcomingBossClearedPrice.value === null
+      ) {
+        return null;
+      }
+
+      return upcomingTotalPrice.value - upcomingBossClearedPrice.value;
     });
 
     function selectCharacterChange(id: string | null) {
@@ -205,6 +256,9 @@ export const useBossStore = defineStore(
       totalPrice,
       bossClearedPrice,
       notClearedPrice,
+      upcomingTotalPrice,
+      upcomingBossClearedPrice,
+      upcomingNotClearedPrice,
       totalBossLength,
       bossClearedCount,
       changeAllCharacterCleared,

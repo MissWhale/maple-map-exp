@@ -5,8 +5,19 @@ const props = defineProps<{
   count: number;
   cleared: boolean;
   price: number;
+  upcomingPrice?: number | null;
   updateCleared: () => void;
 }>();
+
+const bossPriceNow = useBossPriceNow();
+
+const priceDisplay = computed(() =>
+  formatBossTotalPriceDisplay(
+    props.price,
+    props.upcomingPrice ?? null,
+    bossPriceNow.value,
+  ),
+);
 </script>
 
 <template>
@@ -17,7 +28,7 @@ const props = defineProps<{
       <span class="character-statistics-item-count">{{ count }}</span>
     </div>
     <div class="character-statistics-item-right">
-      <span>{{ transformKoreanBossReward(price) }}</span>
+      <CommonBossPriceDisplay :display="priceDisplay" variant="statistics" />
     </div>
   </li>
 </template>
@@ -75,12 +86,6 @@ li.character-statistics-item {
     display: flex;
     flex-direction: row;
     align-items: center;
-
-    span {
-      font-size: 14px;
-      font-weight: 600;
-      color: #667eea;
-    }
   }
 }
 </style>

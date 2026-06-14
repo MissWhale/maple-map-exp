@@ -5,6 +5,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       nexeonApiKey: process.env.NUXT_PUBLIC_NEXEON_API_KEY,
+      bossPriceNow: process.env.NUXT_PUBLIC_BOSS_PRICE_NOW || '',
     },
   },
   app: {

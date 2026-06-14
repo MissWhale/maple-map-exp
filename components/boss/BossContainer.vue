@@ -7,6 +7,7 @@ const props = defineProps<{
 }>();
 
 const bossStore = useBossStore();
+const bossPriceNow = useBossPriceNow();
 
 const characterBoss = computed(() => {
   return props.id
@@ -15,38 +16,63 @@ const characterBoss = computed(() => {
 });
 
 const selectBoss = computed(() => {
+  const date = bossPriceNow.value;
   return bossList
     .sort((a, b) => a.orders - b.orders)
     .map((boss) => {
       const findInfo = characterBoss.value.find((b) => b.id === boss.id);
+      const member = findInfo?.member ?? 1;
+      const difficulty = findInfo?.difficulty ?? null;
+      const originalPrice =
+        difficulty !== null
+          ? getBossRewardAmount(
+              boss.rewardByDifficulty,
+              boss.rewardByDifficultyNew,
+              difficulty,
+              member,
+              date,
+            )
+          : 0;
+      const priceDisplay =
+        difficulty !== null
+          ? formatBossPriceDisplay(
+              boss.rewardByDifficulty,
+              boss.rewardByDifficultyNew,
+              difficulty,
+              member,
+              date,
+            )
+          : null;
+
       return {
         ...boss,
-        checkedIndex: findInfo?.difficulty ?? null,
-        member: findInfo?.member ?? 1,
-        originalPrice:
-          findInfo && findInfo.difficulty !== null
-            ? boss.rewardByDifficulty[findInfo.difficulty] / findInfo.member
-            : 0,
-        price:
-          findInfo && findInfo.difficulty !== null
-            ? transformKoreanBossReward(
-                Math.floor(
-                  boss.rewardByDifficulty[findInfo.difficulty] /
-                    findInfo.member,
-                ),
-              )
-            : null,
+        checkedIndex: difficulty,
+        member,
+        originalPrice,
+        priceDisplay,
       };
     });
 });
 const totalPrice = computed(() => {
-  return transformKoreanBossReward(
-    Math.floor(
-      selectBoss.value.reduce((acc, boss) => {
-        return acc + (boss.originalPrice ?? 0);
-      }, 0),
-    ),
+  const date = bossPriceNow.value;
+  const amount = Math.floor(
+    selectBoss.value.reduce((acc, boss) => {
+      return acc + (boss.originalPrice ?? 0);
+    }, 0),
   );
+  const upcomingAmount = sumUpcomingBossRewardAmounts(
+    selectBoss.value
+      .filter((boss) => boss.checkedIndex !== null)
+      .map((boss) => ({
+        rewardByDifficulty: boss.rewardByDifficulty,
+        rewardByDifficultyNew: boss.rewardByDifficultyNew,
+        difficulty: boss.checkedIndex,
+        member: boss.member,
+      })),
+    date,
+  );
+
+  return formatBossTotalPriceDisplay(amount, upcomingAmount, date);
 });
 
 const selectedCharacter = computed(() => {
@@ -109,10 +135,14 @@ function handleMemberChange(bossId: number, member: number) {
           :disabled="boss.checkedIndex === null"
           @change="handleMemberChange(boss.id, $event)"
         />
-        <span class="boss-price">{{ boss.price }}</span>
+        <CommonBossPriceDisplay
+          v-if="boss.priceDisplay"
+          :display="boss.priceDisplay"
+          class="boss-price"
+        />
       </li>
       <li class="boss-total-price">
-        <span class="boss-total-price-value">{{ totalPrice }}</span>
+        <CommonBossPriceDisplay :display="totalPrice" variant="total" />
       </li>
     </ul>
     <div v-else class="boss-container-empty">
@@ -168,19 +198,14 @@ section.boss-container {
         color: #2c3e50;
       }
 
-      span.boss-price {
-        font-size: 14px;
-        font-weight: 600;
-        text-align: right;
-        color: #667eea;
+      .boss-price {
         padding: 4px 8px;
         border-radius: 6px;
-        display: inline-block;
         width: fit-content;
         margin-left: auto;
       }
 
-      &.has-selected-difficulty span.boss-price {
+      &.has-selected-difficulty .boss-price {
         background: rgba(103, 126, 234, 0.1);
       }
     }
@@ -194,13 +219,9 @@ section.boss-container {
       padding: 16px 16px 0;
       margin-top: 16px;
 
-      span.boss-total-price-value {
-        font-size: 18px;
-        font-weight: 700;
-        color: #2c3e50;
+      :deep(.boss-price-display) {
         padding: 8px 16px;
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
         border-radius: 8px;
         box-shadow: 0 2px 8px rgba(103, 126, 234, 0.3);
       }

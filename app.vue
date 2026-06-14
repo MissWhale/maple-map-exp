@@ -2,6 +2,7 @@
 import { useBossStore } from './store';
 
 const bossStore = useBossStore();
+const bossPriceNow = useBossPriceNow();
 const activeTab = ref(0);
 
 const tabs = [
@@ -10,15 +11,26 @@ const tabs = [
 ];
 
 // 전체 통계 정보
-const totalStats = computed(() => ({
-  totalCharacters: bossStore.totalCharacterList.length,
-  totalBossLength: bossStore.totalBossLength,
-  totalClearedCount: bossStore.bossClearedCount,
-  clearedCharacters: bossStore.totalCharacterList.filter((c) => c.cleared)
-    .length,
-  totalPrice: transformKoreanBossReward(bossStore.totalPrice),
-  clearedPrice: transformKoreanBossReward(bossStore.bossClearedPrice),
-}));
+const totalStats = computed(() => {
+  const date = bossPriceNow.value;
+  return {
+    totalCharacters: bossStore.totalCharacterList.length,
+    totalBossLength: bossStore.totalBossLength,
+    totalClearedCount: bossStore.bossClearedCount,
+    clearedCharacters: bossStore.totalCharacterList.filter((c) => c.cleared)
+      .length,
+    totalPrice: formatBossTotalPriceDisplay(
+      bossStore.totalPrice,
+      bossStore.upcomingTotalPrice,
+      date,
+    ),
+    clearedPrice: formatBossTotalPriceDisplay(
+      bossStore.bossClearedPrice,
+      bossStore.upcomingBossClearedPrice,
+      date,
+    ),
+  };
+});
 
 // 캐릭터 선택 시 보스 설정 탭으로 자동 이동
 watch(
@@ -59,11 +71,17 @@ watch(
           </div>
           <div class="stat-item">
             <span class="stat-label">클리어 가격</span>
-            <span class="stat-value">{{ totalStats.clearedPrice }}</span>
+            <CommonBossPriceDisplay
+              :display="totalStats.clearedPrice"
+              class="stat-price"
+            />
           </div>
           <div class="stat-item">
             <span class="stat-label">총 가격</span>
-            <span class="stat-value">{{ totalStats.totalPrice }}</span>
+            <CommonBossPriceDisplay
+              :display="totalStats.totalPrice"
+              class="stat-price"
+            />
           </div>
         </div>
       </header>
@@ -172,6 +190,21 @@ watch(
         font-size: 18px;
         font-weight: 600;
         color: #2c3e50;
+      }
+
+      .stat-price {
+        align-items: center;
+
+        :deep(.boss-price-display__main) {
+          font-size: 18px;
+          font-weight: 600;
+          color: #2c3e50;
+        }
+
+        :deep(.boss-price-display__upcoming) {
+          font-size: 11px;
+          color: #95a5a6;
+        }
       }
     }
   }

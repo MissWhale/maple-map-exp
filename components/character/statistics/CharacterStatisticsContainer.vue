@@ -2,23 +2,40 @@
 import { useBossStore } from '~/store';
 
 const bossStore = useBossStore();
-const totalInfo = computed(() => [
-  {
-    title: '총 클리어 가격',
-    value: transformKoreanBossReward(bossStore.bossClearedPrice),
-    count: bossStore.bossClearedCount,
-  },
-  {
-    title: '남은 가격',
-    value: transformKoreanBossReward(bossStore.notClearedPrice),
-    count: bossStore.totalBossLength - bossStore.bossClearedCount,
-  },
-  {
-    title: '총 가격',
-    value: transformKoreanBossReward(bossStore.totalPrice),
-    count: bossStore.totalBossLength,
-  },
-]);
+const bossPriceNow = useBossPriceNow();
+
+const totalInfo = computed(() => {
+  const date = bossPriceNow.value;
+  return [
+    {
+      title: '총 클리어 가격',
+      display: formatBossTotalPriceDisplay(
+        bossStore.bossClearedPrice,
+        bossStore.upcomingBossClearedPrice,
+        date,
+      ),
+      count: bossStore.bossClearedCount,
+    },
+    {
+      title: '남은 가격',
+      display: formatBossTotalPriceDisplay(
+        bossStore.notClearedPrice,
+        bossStore.upcomingNotClearedPrice,
+        date,
+      ),
+      count: bossStore.totalBossLength - bossStore.bossClearedCount,
+    },
+    {
+      title: '총 가격',
+      display: formatBossTotalPriceDisplay(
+        bossStore.totalPrice,
+        bossStore.upcomingTotalPrice,
+        date,
+      ),
+      count: bossStore.totalBossLength,
+    },
+  ];
+});
 const checkedCount = computed(() => {
   return bossStore.totalCharacterList.filter((character) => character.cleared)
     .length;
@@ -58,6 +75,7 @@ const checkedCount = computed(() => {
         :count="character.count"
         :cleared="character.cleared"
         :price="character.price"
+        :upcoming-price="character.upcomingPrice"
         :updateCleared="character.updateCleared"
       />
     </ul>
@@ -68,7 +86,7 @@ const checkedCount = computed(() => {
           <span>{{ item.count }}</span>
         </div>
         <div class="character-statistics-total-item-right">
-          <span>{{ item.value }}</span>
+          <CommonBossPriceDisplay :display="item.display" variant="statistics" />
         </div>
       </li>
     </ul>
@@ -151,7 +169,7 @@ section.character-statistics-container {
       }
 
       div.character-statistics-total-item-right {
-        span {
+        :deep(.boss-price-display__main) {
           font-size: 15px;
           font-weight: 600;
           color: #667eea;
@@ -160,8 +178,10 @@ section.character-statistics-container {
 
       // 남은 가격 항목에 대한 특별한 스타일
       &:nth-child(2) {
-        div.character-statistics-total-item-right span {
-          color: #ff6b6b;
+        div.character-statistics-total-item-right {
+          :deep(.boss-price-display__main) {
+            color: #ff6b6b;
+          }
         }
       }
 
@@ -174,10 +194,12 @@ section.character-statistics-container {
           font-size: 16px;
         }
 
-        div.character-statistics-total-item-right span {
-          font-weight: 700;
-          font-size: 16px;
-          color: #2c3e50;
+        div.character-statistics-total-item-right {
+          :deep(.boss-price-display__main) {
+            font-weight: 700;
+            font-size: 16px;
+            color: #2c3e50;
+          }
         }
       }
     }
