@@ -86,7 +86,7 @@ const selectedBossCount = computed(() => {
 });
 
 const isMaxBossCount = computed(() => {
-  return selectedBossCount.value === 12 || bossStore.totalBossLength >= 90;
+  return bossStore.totalBossLength >= 90;
 });
 
 function handleChange(bossId: number, difficulty: BossDifficultyNumber | null) {
