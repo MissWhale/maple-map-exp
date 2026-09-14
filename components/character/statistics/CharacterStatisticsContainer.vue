@@ -174,6 +174,19 @@ section.character-statistics-container {
           font-weight: 600;
           color: #667eea;
         }
+
+        :deep(.boss-price-display__upcoming) {
+          font-size: 11px;
+          color: #95a5a6;
+        }
+
+        :deep(.boss-price-display__rate--down) {
+          color: #e74c3c;
+        }
+
+        :deep(.boss-price-display__rate--up) {
+          color: #27ae60;
+        }
       }
 
       // 남은 가격 항목에 대한 특별한 스타일

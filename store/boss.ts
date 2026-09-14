@@ -139,14 +139,22 @@ export const useBossStore = defineStore(
       return sumUpcomingBossRewardAmounts(bossEntries, date);
     });
     const upcomingNotClearedPrice = computed(() => {
-      if (
-        upcomingTotalPrice.value === null ||
-        upcomingBossClearedPrice.value === null
-      ) {
-        return null;
-      }
+      const date = bossPriceNow.value;
+      const bossMap = new Map(bossList.map((boss) => [boss.id, boss]));
+      const bossEntries = characterList.value
+        .filter((character) => !character.isCleared)
+        .flatMap((character) => character.boss)
+        .map((boss) => {
+          const bossInfo = bossMap.get(boss.id);
+          return {
+            rewardByDifficulty: bossInfo?.rewardByDifficulty ?? [],
+            rewardByDifficultyNew: bossInfo?.rewardByDifficultyNew,
+            difficulty: boss.difficulty,
+            member: boss.member,
+          };
+        });
 
-      return upcomingTotalPrice.value - upcomingBossClearedPrice.value;
+      return sumUpcomingBossRewardAmounts(bossEntries, date);
     });
 
     function selectCharacterChange(id: string | null) {

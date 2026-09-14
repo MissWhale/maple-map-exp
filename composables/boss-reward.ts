@@ -1,6 +1,6 @@
 import { useNow } from '@vueuse/core';
 
-export const BOSS_PRICE_CHANGE_AT = new Date('2026-06-18T06:00:00+09:00');
+export const BOSS_PRICE_CHANGE_AT = new Date('2026-09-17T09:00:00+09:00');
 
 export function useBossPriceNow() {
   const now = useNow({ interval: 60_000 });
@@ -131,7 +131,25 @@ export function sumUpcomingBossRewardAmounts(
 export type FormattedBossPrice = {
   main: string;
   upcoming?: string;
+  changeRate?: string;
+  changeDirection?: 'up' | 'down';
 };
+
+export function formatChangeRate(
+  currentAmount: number,
+  upcomingAmount: number,
+): { changeRate: string; changeDirection: 'up' | 'down' } | null {
+  if (currentAmount <= 0 || currentAmount === upcomingAmount) return null;
+
+  const rate = ((upcomingAmount - currentAmount) / currentAmount) * 100;
+  const rounded = Math.round(rate * 10) / 10;
+  const sign = rounded > 0 ? '+' : '';
+
+  return {
+    changeRate: `${sign}${rounded}%`,
+    changeDirection: rounded > 0 ? 'up' : 'down',
+  };
+}
 
 export function formatBossPriceDisplay(
   rewardByDifficulty: number[],
@@ -161,9 +179,12 @@ export function formatBossPriceDisplay(
 
   if (upcomingAmount === null) return { main };
 
+  const change = formatChangeRate(amount, upcomingAmount);
+
   return {
     main,
     upcoming: transformKoreanBossReward(upcomingAmount),
+    ...change,
   };
 }
 
@@ -182,8 +203,11 @@ export function formatBossTotalPriceDisplay(
     return { main };
   }
 
+  const change = formatChangeRate(amount, upcomingAmount);
+
   return {
     main,
     upcoming: transformKoreanBossReward(upcomingAmount),
+    ...change,
   };
 }
